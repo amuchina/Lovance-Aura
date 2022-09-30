@@ -12,12 +12,12 @@ function love.load()
     bedroomMap = sti('maps/bedroom/map.lua')
 
     aura = {}
-    aura.collider = world:newBSGRectangleCollider(225, 216, 32, 50, 2)
+    aura.x = 300;
+    aura.y = 300;
+    aura.collider = world:newBSGRectangleCollider(aura.x, aura.y, 32, 50, 0)
     aura.collider:setFixedRotation(true)
-    aura.x = 200
-    aura.y = 200
     
-    aura.speed = 300
+    aura.speed = 300;
     
     aura.spritesheet = love.graphics.newImage('assets/homeAura/HomeAura-spritesheet.png')
     aura.grid = anim8.newGrid(32, 50, aura.spritesheet:getWidth(), aura.spritesheet:getHeight())
@@ -41,12 +41,10 @@ function love.load()
 end
 
 function love.update(dt)
-    love.graphics.print("x = " .. aura.x)
-    love.graphics.print("y = " .. aura.y)
     local isPlayerMoving = false
 
-    local vx = 0;
-    local vy = 0;
+    local vx = 0
+    local vy = 0
 
     if love.keyboard.isDown("right") then
         vx = aura.speed
@@ -73,14 +71,16 @@ function love.update(dt)
     end
 
     world:update(dt)
-    aura.x = aura.collider:getX()
-    aura.y = aura.collider:getY()
+    aura.x = aura.collider:getX() - 16
+    aura.y = aura.collider:getY() - 25
 
     aura.animate:update(dt)
 end
 
 function love.draw()
     bedroomMap:draw()
-    world:draw()
     aura.animate:draw(aura.spritesheet, aura.x, aura.y)
+    --world:draw()
+    --love.graphics.print("x = "..aura.x, 0, 0)
+    --love.graphics.print("\ny = "..aura.y, 0, 0)
 end
