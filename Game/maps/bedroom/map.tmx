@@ -1,199 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="8" height="8" tilewidth="52" tileheight="52" infinite="0" nextlayerid="20" nextobjectid="8">
- <tileset firstgid="1" source="map-tileset/bedroomTileset.tsx"/>
- <group id="18" name="mapdetails">
-  <layer id="1" name="map_background" width="8" height="8">
-   <data encoding="csv">
-1,1,1,1,1,1,1,1,
-1,1,1,1,1,1,1,1,
-1,1,0,0,0,0,1,1,
-1,1,0,0,0,0,1,1,
-1,1,0,0,0,0,1,1,
-1,1,0,0,0,0,1,1,
-1,1,1,1,0,1,1,1,
-1,1,1,1,1,1,1,1
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="8" height="8" tilewidth="100" tileheight="75" infinite="0" nextlayerid="3" nextobjectid="25">
+ <tileset firstgid="1" name="bedroomTileset" tilewidth="100" tileheight="75" tilecount="64" columns="8">
+  <image source="map1.png" width="800" height="600"/>
+ </tileset>
+ <layer id="1" name="Livello tile 1" width="8" height="8" offsetx="-4.25" offsety="0">
+  <data encoding="csv">
+1,2,3,4,5,6,7,8,
+9,10,11,12,13,14,15,15,
+9,18,19,20,21,22,15,15,
+9,26,27,28,29,30,15,15,
+9,34,35,36,37,38,15,15,
+9,42,43,44,45,46,15,15,
+9,50,51,52,53,54,62,62,
+9,62,62,60,61,62,62,62
 </data>
-  </layer>
-  <layer id="2" name="map_ground" width="8" height="8">
-   <data encoding="csv">
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,16,16,16,16,0,0,
-0,0,16,16,16,16,0,0,
-0,0,16,16,16,16,0,0,
-0,0,0,0,16,0,0,0,
-0,0,0,0,0,0,0,0
-</data>
-  </layer>
-  <layer id="5" name="map_roomBorder" width="8" height="8">
-   <data encoding="csv">
-0,0,0,0,0,0,0,0,
-0,6,10,10,10,10,7,0,
-0,12,2,0,0,3,13,0,
-0,12,0,0,0,0,13,0,
-0,12,0,0,0,0,13,0,
-0,12,4,0,0,5,13,0,
-0,8,11,14,0,15,9,0,
-0,0,0,0,0,0,0,0
-</data>
-  </layer>
- </group>
- <group id="17" name="objects">
-  <layer id="3" name="object_walls" width="8" height="8">
-   <data encoding="csv">
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,17,17,17,17,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0
-</data>
-  </layer>
-  <layer id="4" name="object_walldetails" width="8" height="8">
-   <data encoding="csv">
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,18,18,18,18,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0
-</data>
-  </layer>
-  <layer id="6" name="object_bed" width="8" height="8">
-   <data encoding="csv">
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,19,0,0,0,0,0,
-0,0,28,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0
-</data>
-  </layer>
-  <layer id="7" name="object_bookshelf" width="8" height="8" offsetx="37.3333" offsety="-2.66667">
-   <data encoding="csv">
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,20,21,0,0,
-0,0,0,0,29,30,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0
-</data>
-  </layer>
-  <layer id="8" name="object_window" width="8" height="8" offsetx="15.3333" offsety="0.333333">
-   <data encoding="csv">
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,22,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0
-</data>
-  </layer>
-  <layer id="9" name="object_desk" width="8" height="8" offsetx="7.66667" offsety="0">
-   <data encoding="csv">
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,23,0,0,
-0,0,0,0,0,32,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0
-</data>
-  </layer>
-  <layer id="10" name="object_carpet" width="8" height="8" offsetx="24.3333" offsety="-12.6667">
-   <data encoding="csv">
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,31,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0
-</data>
-  </layer>
-  <layer id="11" name="object_wardrobe" width="8" height="8" offsetx="-8.33333" offsety="14">
-   <data encoding="csv">
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,24,0,0,0,0,0,
-0,0,33,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0
-</data>
-  </layer>
- </group>
- <group id="16" name="plushies">
-  <layer id="12" name="flamingo_plush" width="8" height="8" offsetx="-10" offsety="-23.6667">
-   <data encoding="csv">
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,25,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0
-</data>
-  </layer>
-  <layer id="13" name="koala_plush" width="8" height="8" offsetx="-1.33333" offsety="-23.3333">
-   <data encoding="csv">
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,26,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0
-</data>
-  </layer>
-  <layer id="14" name="whale_plush" width="8" height="8" offsetx="7.66667" offsety="-0.333333">
-   <data encoding="csv">
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,34,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0
-</data>
-  </layer>
-  <layer id="15" name="fish_plush" width="8" height="8" offsetx="10.6667" offsety="11">
-   <data encoding="csv">
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,35,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0
-</data>
-  </layer>
- </group>
- <objectgroup id="19" name="Walls">
-  <object id="1" x="108" y="146.667" width="29.3333" height="50"/>
-  <object id="2" x="115.333" y="202" width="10.6667" height="18"/>
-  <object id="3" x="107.333" y="227.333" width="26" height="79.3333"/>
-  <object id="4" x="280" y="199.333" width="29.3333" height="59.3333"/>
-  <object id="5" x="287.333" y="291.333" width="18" height="14"/>
-  <object id="6" x="225.333" y="149.333" width="14.6667" height="18.6667"/>
-  <object id="7" x="244.667" y="109.333" width="60.6667" height="65.3333"/>
+ </layer>
+ <objectgroup id="2" name="Walls">
+  <object id="3" x="176.75" y="140.75" width="59.5" height="100.5"/>
+  <object id="4" x="188.25" y="250.75" width="27.25" height="32.75"/>
+  <object id="5" x="174.5" y="302.75" width="56.25" height="157.75"/>
+  <object id="7" x="409" y="145.75" width="34.5" height="36"/>
+  <object id="8" x="449.75" y="64.25" width="123.25" height="133.25"/>
+  <object id="9" x="520.5" y="242.75" width="60" height="122.5"/>
+  <object id="10" x="539.25" y="430.25" width="32.5" height="25.5"/>
+  <object id="11" x="168.5" y="151.25" width="8.25" height="7.75"/>
+  <object id="12" x="236.5" y="151" width="141" height="7.5"/>
+  <object id="13" x="377" y="150.75" width="32.25" height="8"/>
+  <object id="14" x="443.75" y="150.5" width="6.25" height="8.5"/>
+  <object id="15" x="573.5" y="151" width="11.5" height="8"/>
+  <object id="16" x="585" y="293.75" width="1.5" height="177.5"/>
+  <object id="17" x="585" y="159" width="2.25" height="134.25"/>
+  <object id="18" x="166.75" y="159" width="2" height="141.5"/>
+  <object id="19" x="166.75" y="300.5" width="2" height="170.25"/>
+  <object id="20" x="168.75" y="471" width="165" height="2.5"/>
+  <object id="21" x="334" y="471.017" width="42.75" height="3.73333"/>
+  <object id="22" x="372.25" y="475" width="4.53125" height="99.75"/>
+  <object id="23" x="480.75" y="471.25" width="4.25" height="104.25"/>
+  <object id="24" x="485" y="471" width="102" height="2.5"/>
  </objectgroup>
 </map>

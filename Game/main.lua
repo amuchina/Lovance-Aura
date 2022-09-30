@@ -9,13 +9,14 @@ function love.load()
     anim8 = require 'libs/anim8' --import anim8 lib
     sti = require 'libs/sti'    --import sti lib
 
-    bedroomMap = sti('maps/bedroom/map1.lua')
+    bedroomMap = sti('maps/bedroom/map.lua')
 
     aura = {}
+    aura.collider = world:newBSGRectangleCollider(225, 216, 32, 50, 2)
+    aura.collider:setFixedRotation(true)
     aura.x = 200
     aura.y = 200
-    aura.collider = world:newBSGRectangleCollider(aura.x, aura.y, 40 ,70, 2)
-    aura.collider:setFixedRotation(true)
+    
     aura.speed = 300
     
     aura.spritesheet = love.graphics.newImage('assets/homeAura/HomeAura-spritesheet.png')
@@ -33,13 +34,15 @@ function love.load()
     if bedroomMap.layers["Walls"] then
         for i, obj in pairs(bedroomMap.layers["Walls"].objects) do
             local wall = world:newRectangleCollider(obj.x, obj.y, obj.width, obj.height)
-            wall:setType('static')  
-            table.insert(walls, wall) 
-        end     
+            wall:setType('static')
+            table.insert(walls, wall)
+        end
     end
 end
 
 function love.update(dt)
+    love.graphics.print("x = " .. aura.x)
+    love.graphics.print("y = " .. aura.y)
     local isPlayerMoving = false
 
     local vx = 0;
