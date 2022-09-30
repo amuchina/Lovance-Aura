@@ -71,6 +71,113 @@ return {
         9, 50, 51, 52, 53, 54, 62, 62,
         9, 62, 62, 60, 61, 62, 62, 62
       }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 19,
+      name = "Walls",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 1,
+          name = "",
+          class = "",
+          shape = "rectangle",
+          x = 108,
+          y = 146.667,
+          width = 29.3333,
+          height = 50,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 2,
+          name = "",
+          class = "",
+          shape = "rectangle",
+          x = 115.333,
+          y = 202,
+          width = 10.6667,
+          height = 18,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 3,
+          name = "",
+          class = "",
+          shape = "rectangle",
+          x = 107.333,
+          y = 227.333,
+          width = 26,
+          height = 79.3333,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 4,
+          name = "",
+          class = "",
+          shape = "rectangle",
+          x = 280,
+          y = 199.333,
+          width = 29.3333,
+          height = 59.3333,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 5,
+          name = "",
+          class = "",
+          shape = "rectangle",
+          x = 287.333,
+          y = 291.333,
+          width = 18,
+          height = 14,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 6,
+          name = "",
+          class = "",
+          shape = "rectangle",
+          x = 225.333,
+          y = 149.333,
+          width = 14.6667,
+          height = 18.6667,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 7,
+          name = "",
+          class = "",
+          shape = "rectangle",
+          x = 244.667,
+          y = 109.333,
+          width = 60.6667,
+          height = 65.3333,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
     }
   }
 }

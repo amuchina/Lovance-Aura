@@ -3,6 +3,9 @@ _G.love = require("love")
 function love.load()
     love.graphics.setDefaultFilter('nearest', 'nearest')
 
+    wf = require 'libs/windfield'
+    world = wf.newWorld(0, 0)
+
     anim8 = require 'libs/anim8' --import anim8 lib
     sti = require 'libs/sti'    --import sti lib
 
@@ -11,8 +14,9 @@ function love.load()
     aura = {}
     aura.x = 200
     aura.y = 200
-    aura.speedX = 2
-    aura.speedY = 2
+    aura.collider = world:newBSGRectangleCollider(aura.x, aura.y, 40 ,70, 2)
+    aura.collider:setFixedRotation(true)
+    aura.speed = 300
     
     aura.spritesheet = love.graphics.newImage('assets/homeAura/HomeAura-spritesheet.png')
     aura.grid = anim8.newGrid(32, 50, aura.spritesheet:getWidth(), aura.spritesheet:getHeight())
@@ -24,38 +28,56 @@ function love.load()
     aura.moveAnimations.up = anim8.newAnimation(aura.grid('1-4', 4), 0.2)
     
     aura.animate = aura.moveAnimations.down
+
+    walls = {}
+    if bedroomMap.layers["Walls"] then
+        for i, obj in pairs(bedroomMap.layers["Walls"].objects) do
+            local wall = world:newRectangleCollider(obj.x, obj.y, obj.width, obj.height)
+            wall:setType('static')  
+            table.insert(walls, wall) 
+        end     
+    end
 end
 
 function love.update(dt)
     local isPlayerMoving = false
 
+    local vx = 0;
+    local vy = 0;
+
     if love.keyboard.isDown("right") then
-        aura.x = aura.x + aura.speedX
+        vx = aura.speed
         aura.animate = aura.moveAnimations.right
         isPlayerMoving = true
     elseif love.keyboard.isDown("left") then
-        aura.x = aura.x - aura.speedX
+        vx = - aura.speed
         aura.animate = aura.moveAnimations.left
         isPlayerMoving = true
     elseif love.keyboard.isDown("up") then
-        aura.y = aura.y - aura.speedY
+        vy = - aura.speed
         aura.animate = aura.moveAnimations.up
         isPlayerMoving = true
     elseif love.keyboard.isDown("down") then
-        aura.y = aura.y + aura.speedY
+        vy = aura.speed
         aura.animate = aura.moveAnimations.down
         isPlayerMoving = true
     end
 
+    aura.collider:setLinearVelocity(vx, vy)
+
     if isPlayerMoving == false then
         aura.animate:gotoFrame(2)
     end
+
+    world:update(dt)
+    aura.x = aura.collider:getX()
+    aura.y = aura.collider:getY()
 
     aura.animate:update(dt)
 end
 
 function love.draw()
     bedroomMap:draw()
-    love.graphics.scale(1.3, 1.3)
+    world:draw()
     aura.animate:draw(aura.spritesheet, aura.x, aura.y)
 end
