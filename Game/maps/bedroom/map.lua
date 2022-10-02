@@ -489,7 +489,9 @@ return {
           height = 16.875,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["queryDirection"] = "l"
+          }
         },
         {
           id = 17,
@@ -502,7 +504,9 @@ return {
           height = 16.5,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["queryDirection"] = "ru"
+          }
         },
         {
           id = 18,
@@ -515,7 +519,9 @@ return {
           height = 26.5,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["queryDirection"] = "rd"
+          }
         },
         {
           id = 19,
@@ -528,7 +534,9 @@ return {
           height = 39.625,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["queryDirection"] = "ru"
+          }
         },
         {
           id = 20,
@@ -541,7 +549,9 @@ return {
           height = 20.25,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["queryDirection"] = "rd"
+          }
         },
         {
           id = 21,
@@ -554,7 +564,9 @@ return {
           height = 36.375,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["queryDirection"] = "l"
+          }
         },
         {
           id = 22,
@@ -567,7 +579,9 @@ return {
           height = 6.75,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["queryDirection"] = "u"
+          }
         },
         {
           id = 23,
@@ -580,7 +594,9 @@ return {
           height = 7.875,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["queryDirection"] = "u"
+          }
         },
         {
           id = 24,
@@ -593,7 +609,9 @@ return {
           height = 18.125,
           rotation = 0,
           visible = true,
-          properties = {}
+          properties = {
+            ["queryDirection"] = "l"
+          }
         }
       }
     },
