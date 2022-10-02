@@ -1,10 +1,15 @@
 _G.love = require("love")
+_G.scale = 2
+_G.offsetx = 0
+_G.offsety = -70
 
 function love.load()
     love.graphics.setDefaultFilter('nearest', 'nearest')
 
     wf = require 'libs/windfield'
-    world = wf.newWorld(0, 0)
+    world = wf.newWorld(0,0)
+    world:addCollisionClass('Solid')
+    world:addCollisionClass('Ghost', {ignores = {'Solid'}})
 
     anim8 = require 'libs/anim8' --import anim8 lib
     sti = require 'libs/sti'    --import sti lib
@@ -14,8 +19,10 @@ function love.load()
     aura = {}
     aura.x = 300;
     aura.y = 300;
-    aura.collider = world:newBSGRectangleCollider(aura.x, aura.y, 32, 50, 0)
+    aura.collider = world:newBSGRectangleCollider(aura.x, aura.y, 32, 20, 0)
     aura.collider:setFixedRotation(true)
+    aura.collider:setCollisionClass('Solid')
+    aura.canInteract = false;
     
     aura.speed = 300;
     
@@ -30,12 +37,22 @@ function love.load()
     
     aura.animate = aura.moveAnimations.down
 
-    walls = {}
-    if bedroomMap.layers["Walls"] then
-        for i, obj in pairs(bedroomMap.layers["Walls"].objects) do
-            local wall = world:newRectangleCollider(obj.x, obj.y, obj.width, obj.height)
-            wall:setType('static')
-            table.insert(walls, wall)
+    objects = {}
+    if bedroomMap.layers["objects"] then
+        for i, obj in pairs(bedroomMap.layers["objects"].objects) do
+            local object = world:newRectangleCollider((obj.x * scale) + offsetx * scale, (obj.y * scale) + offsety * scale, obj.width * scale, obj.height * scale)
+            object:setType('static')
+            table.insert(objects, object)
+        end
+    end
+
+    queryBoxs = {}
+    if bedroomMap.layers["queryBoxs"] then
+        for i, obj in pairs(bedroomMap.layers["queryBoxs"].objects) do
+            local queryBox = world:newRectangleCollider((obj.x * scale) + offsetx * scale, (obj.y * scale) + offsety * scale, obj.width * scale, obj.height * scale)
+            queryBox:setType('static')
+            queryBox:setCollisionClass('Ghost')
+            table.insert(queryBoxs, queryBox)
         end
     end
 end
@@ -72,15 +89,27 @@ function love.update(dt)
 
     world:update(dt)
     aura.x = aura.collider:getX() - 16
-    aura.y = aura.collider:getY() - 25
+    aura.y = aura.collider:getY() - 40
+
+    if aura.collider:enter('Ghost') then
+        aura.canInteract = true;
+    end
+    if aura.collider:exit('Ghost') then
+        aura.canInteract = false;
+    end
 
     aura.animate:update(dt)
 end
 
 function love.draw()
-    bedroomMap:draw()
+    bedroomMap:draw(offsetx,offsety,2,2)
     aura.animate:draw(aura.spritesheet, aura.x, aura.y)
     --world:draw()
+
+    if aura.canInteract then
+        love.graphics.print("puoi interagire", 0, 0)
+    end
+
     --love.graphics.print("x = "..aura.x, 0, 0)
     --love.graphics.print("\ny = "..aura.y, 0, 0)
 end
