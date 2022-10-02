@@ -10,7 +10,7 @@ return {
   tilewidth = 52,
   tileheight = 52,
   nextlayerid = 19,
-  nextobjectid = 26,
+  nextobjectid = 29,
   properties = {},
   tilesets = {
     {
@@ -627,7 +627,7 @@ return {
         {
           id = 2,
           name = "koala",
-          class = "",
+          class = "Pickable",
           shape = "rectangle",
           x = 226.364,
           y = 147.455,
@@ -666,7 +666,7 @@ return {
         {
           id = 5,
           name = "fish",
-          class = "",
+          class = "Pickable",
           shape = "rectangle",
           x = 290.909,
           y = 293.091,
@@ -692,7 +692,7 @@ return {
         {
           id = 7,
           name = "flamingo",
-          class = "",
+          class = "Pickable",
           shape = "rectangle",
           x = 117.091,
           y = 202.182,
@@ -789,6 +789,19 @@ return {
           y = 317.125,
           width = 5.25,
           height = 46.5,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 27,
+          name = "whale",
+          class = "Pickable",
+          shape = "rectangle",
+          x = 284.333,
+          y = 226.333,
+          width = 19.6667,
+          height = 14.6667,
           rotation = 0,
           visible = true,
           properties = {}

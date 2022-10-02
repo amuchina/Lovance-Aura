@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="8" height="8" tilewidth="52" tileheight="52" infinite="0" nextlayerid="19" nextobjectid="26">
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="8" height="8" tilewidth="52" tileheight="52" infinite="0" nextlayerid="19" nextobjectid="29">
+ <editorsettings>
+  <export target="map.tmx" format="tmx"/>
+ </editorsettings>
  <tileset firstgid="1" name="tileset" tilewidth="52" tileheight="52" tilecount="36" columns="9">
   <image source="map-tileset/bedroomTileset.png" width="468" height="208"/>
  </tileset>
@@ -196,12 +199,12 @@
  </objectgroup>
  <objectgroup id="17" name="objects" visible="0">
   <object id="1" name="bed" x="106.909" y="142.545" width="30.3636" height="50"/>
-  <object id="2" name="koala" x="226.364" y="147.455" width="16.3636" height="17.2727"/>
+  <object id="2" name="koala" class="Pickable" x="226.364" y="147.455" width="16.3636" height="17.2727"/>
   <object id="3" name="bookshelf" x="248" y="108.545" width="61.0909" height="66.1818"/>
   <object id="4" name="desk" x="279.091" y="198.545" width="29.8182" height="60.9091"/>
-  <object id="5" name="fish" x="290.909" y="293.091" width="15.2727" height="12.3636"/>
+  <object id="5" name="fish" class="Pickable" x="290.909" y="293.091" width="15.2727" height="12.3636"/>
   <object id="6" name="wardrobe" x="108.545" y="227.455" width="27.8182" height="78.9091"/>
-  <object id="7" name="flamingo" x="117.091" y="202.182" width="12" height="16.9091"/>
+  <object id="7" name="flamingo" class="Pickable" x="117.091" y="202.182" width="12" height="16.9091"/>
   <object id="9" name="walldetails" x="104" y="152" width="208" height="4.18182"/>
   <object id="10" x="312" y="151.875" width="5" height="165.125"/>
   <object id="11" x="260.125" y="312" width="51.75" height="5.125"/>
@@ -209,5 +212,6 @@
   <object id="13" x="98.875" y="151.625" width="5.25" height="165.625"/>
   <object id="14" x="104" y="312" width="104" height="5.125"/>
   <object id="15" x="202.75" y="317.125" width="5.25" height="46.5"/>
+  <object id="27" name="whale" class="Pickable" x="284.333" y="226.333" width="19.6667" height="14.6667"/>
  </objectgroup>
 </map>
