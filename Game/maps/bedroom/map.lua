@@ -10,7 +10,7 @@ return {
   tilewidth = 52,
   tileheight = 52,
   nextlayerid = 19,
-  nextobjectid = 29,
+  nextobjectid = 35,
   properties = {},
   tilesets = {
     {
@@ -490,7 +490,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["queryDirection"] = "l"
+            ["queryDirection"] = "left"
           }
         },
         {
@@ -500,12 +500,12 @@ return {
           shape = "rectangle",
           x = 218.375,
           y = 156.125,
-          width = 24.5,
-          height = 16.5,
+          width = 7.83333,
+          height = 7.5,
           rotation = 0,
           visible = true,
           properties = {
-            ["queryDirection"] = "ru"
+            ["queryDirection"] = "right"
           }
         },
         {
@@ -514,13 +514,13 @@ return {
           class = "static",
           shape = "rectangle",
           x = 271.25,
-          y = 191.125,
-          width = 36.625,
-          height = 26.5,
+          y = 206.458,
+          width = 6.625,
+          height = 11.1667,
           rotation = 0,
           visible = true,
           properties = {
-            ["queryDirection"] = "rd"
+            ["queryDirection"] = "right"
           }
         },
         {
@@ -528,14 +528,14 @@ return {
           name = "whale",
           class = "",
           shape = "rectangle",
-          x = 270.75,
-          y = 229,
-          width = 37.125,
-          height = 39.625,
+          x = 271.083,
+          y = 229.333,
+          width = 6.79167,
+          height = 13.2917,
           rotation = 0,
           visible = true,
           properties = {
-            ["queryDirection"] = "ru"
+            ["queryDirection"] = "right"
           }
         },
         {
@@ -544,13 +544,13 @@ return {
           class = "",
           shape = "rectangle",
           x = 283,
-          y = 285.125,
-          width = 23.25,
-          height = 20.25,
+          y = 297.792,
+          width = 6.58333,
+          height = 7.58333,
           rotation = 0,
           visible = true,
           properties = {
-            ["queryDirection"] = "rd"
+            ["queryDirection"] = "right"
           }
         },
         {
@@ -565,7 +565,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["queryDirection"] = "l"
+            ["queryDirection"] = "left"
           }
         },
         {
@@ -580,7 +580,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["queryDirection"] = "u"
+            ["queryDirection"] = "up"
           }
         },
         {
@@ -595,7 +595,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["queryDirection"] = "u"
+            ["queryDirection"] = "up"
           }
         },
         {
@@ -610,7 +610,67 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["queryDirection"] = "l"
+            ["queryDirection"] = "left"
+          }
+        },
+        {
+          id = 29,
+          name = "koala",
+          class = "",
+          shape = "rectangle",
+          x = 228.667,
+          y = 166,
+          width = 12.3333,
+          height = 7.33333,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["queryDirection"] = "up"
+          }
+        },
+        {
+          id = 30,
+          name = "diary",
+          class = "static",
+          shape = "rectangle",
+          x = 282.333,
+          y = 191,
+          width = 22.3333,
+          height = 7.33333,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["queryDirection"] = "down"
+          }
+        },
+        {
+          id = 32,
+          name = "whale",
+          class = "",
+          shape = "rectangle",
+          x = 283,
+          y = 260.667,
+          width = 21.6667,
+          height = 7.33333,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["queryDirection"] = "up"
+          }
+        },
+        {
+          id = 34,
+          name = "fish",
+          class = "",
+          shape = "rectangle",
+          x = 290.333,
+          y = 285.667,
+          width = 17,
+          height = 6,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["queryDirection"] = "down"
           }
         }
       }

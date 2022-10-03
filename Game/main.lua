@@ -70,10 +70,13 @@ function love.load()
             queryBox:setCollisionClass('Ghost')
             queryBox.name = obj.name
 
+            --[[
             queryBox.queryDirection = {}
             for i = 1, #obj.properties.queryDirection do
                 queryBox.queryDirection[i] = obj.properties.queryDirection:sub(i, i)
             end
+            ]]--
+            queryBox.queryDirection = obj.properties.queryDirection
             
             table.insert(queryBoxs, queryBox)
         end
@@ -87,22 +90,22 @@ function love.update(dt)
     local vy = 0
 
     if love.keyboard.isDown("right") then
-        aura.dir = "r"
+        aura.dir = "right"
         vx = aura.speed
         aura.animate = aura.moveAnimations.right
         isPlayerMoving = true
     elseif love.keyboard.isDown("left") then
-        aura.dir = "l"
+        aura.dir = "left"
         vx = - aura.speed
         aura.animate = aura.moveAnimations.left
         isPlayerMoving = true
     elseif love.keyboard.isDown("up") then
-        aura.dir = "u"
+        aura.dir = "up"
         vy = - aura.speed
         aura.animate = aura.moveAnimations.up
         isPlayerMoving = true
     elseif love.keyboard.isDown("down") then
-        aura.dir = "d"
+        aura.dir = "down"
         vy = aura.speed
         aura.animate = aura.moveAnimations.down
         isPlayerMoving = true
@@ -126,31 +129,25 @@ function love.update(dt)
         for _, object in pairs(objects) do
             if queryBox:enter('Player') then
                 if queryBox.name == object.name and object.class == 'Pickable' then
-                    for k, v in pairs (queryBox.queryDirection) do
-                        if v == aura.dir then
-                            aura.interact.name = queryBox.name
-                            aura.interact.dir = queryBox.queryDirection
-                        end
+                    if queryBox.queryDirection == aura.dir then
+                        aura.interact.name = queryBox.name
+                        aura.interact.dir = queryBox.queryDirection
                     end
                 end
             end
             if queryBox:stay('Player') then
                 if aura.interact.name ~= '' then
                     local f = false;
-                    for k, v in pairs(aura.interact.dir) do
-                        if v == aura.dir then
-                            f = true;
-                        end
+                    if aura.interact.dir == aura.dir then
+                        f = true;
                     end
                     if not f then
                         aura.interact.name = ''
                     end 
                 elseif queryBox.name == object.name and object.class == 'Pickable' then
-                    for k, v in pairs (queryBox.queryDirection) do
-                        if v == aura.dir then
-                            aura.interact.name = queryBox.name
-                            aura.interact.dir = queryBox.queryDirection
-                        end
+                    if queryBox.queryDirection == aura.dir then
+                        aura.interact.name = queryBox.name
+                        aura.interact.dir = queryBox.queryDirection
                     end
                 end    
             end
