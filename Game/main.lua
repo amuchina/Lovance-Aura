@@ -9,17 +9,21 @@ function love.load()
     love.graphics.setDefaultFilter('nearest', 'nearest')
 
     wf = require 'libs/windfield'
-    world = wf.newWorld(0,0)
+    world = wf.newWorld(0, 0)
     world:addCollisionClass('Solid')
     world:addCollisionClass('Player')
     world:addCollisionClass('Ghost', {ignores = {'Player'}})
     world:addCollisionClass('Pickable')
 
-    anim8 = require 'libs/anim8' --import anim8 lib
-    sti = require 'libs/sti'    --import sti lib
+    interactBox = love.graphics.newImage("assets/UI/dialogbox_default.png")
+    interactTextFont = love.graphics.newFont("assets/fonts/SegaArcadeFont-Regular.ttf", 28)
+    love.graphics.setFont(interactTextFont)
+
+    anim8 = require 'libs/anim8'
+    sti = require 'libs/sti'
 
     bedroomMap = sti('maps/bedroom/map.lua')
-
+    
     aura = {}
 
     aura.x = 300
@@ -29,6 +33,8 @@ function love.load()
     aura.collider:setCollisionClass('Player')
     aura.canInteract = false
     aura.interact = { name = '', dir = ''}
+    aura.interactTextTable = {}
+    aura.showInteractBox = false
 
     aura.dir = "down"
     
@@ -69,14 +75,8 @@ function love.load()
             queryBox:setType('static')
             queryBox:setCollisionClass('Ghost')
             queryBox.name = obj.name
-
-            --[[
-            queryBox.queryDirection = {}
-            for i = 1, #obj.properties.queryDirection do
-                queryBox.queryDirection[i] = obj.properties.queryDirection:sub(i, i)
-            end
-            ]]--
             queryBox.queryDirection = obj.properties.queryDirection
+            queryBox.queryString = obj.properties.queryString
             
             table.insert(queryBoxs, queryBox)
         end
@@ -110,6 +110,9 @@ function love.update(dt)
         aura.animate = aura.moveAnimations.down
         isPlayerMoving = true
     end
+    if love.keyboard.isDown("return") then
+        aura.showInteractBox = true
+    end
 
     aura.collider:setLinearVelocity(vx, vy)
 
@@ -134,6 +137,9 @@ function love.update(dt)
                         aura.interact.dir = queryBox.queryDirection
                     end
                 end
+                for i = 1, #queryBox.queryString do 
+                    aura.interactTextTable[i] = queryBox.queryString:sub(i, i)
+                end
             end
             if queryBox:stay('Player') then
                 if aura.interact.name ~= '' then
@@ -149,10 +155,15 @@ function love.update(dt)
                         aura.interact.name = queryBox.name
                         aura.interact.dir = queryBox.queryDirection
                     end
-                end    
+                end 
+                for i = 1, #queryBox.queryString do 
+                    aura.interactTextTable[i] = queryBox.queryString:sub(i, i)
+                end
             end
             if queryBox:exit('Player') then
                 aura.interact.name = ''
+                aura.showInteractBox = false
+                aura.interactTextTable = {}
             end
         end
     end
@@ -165,6 +176,11 @@ function love.update(dt)
         if love.keyboard.isDown('z') then
             if aura.interact.name ~= '' then
                 bedroomMap.layers[aura.interact.name].visible = false
+                for _, queryBox in pairs(queryBoxs) do
+                    if queryBox.name == aura.interact.name then
+                        queryBox:destroy() -- to fix
+                    end
+                end
                 for _, object in pairs(objects) do
                     if object.name == aura.interact.name then
                         object:setCollisionClass('Ghost')
@@ -184,9 +200,29 @@ end
 function love.draw()
     bedroomMap:draw(offsetx, offsety, scale, scale)
     aura.animate:draw(aura.spritesheet, aura.x, aura.y)
-    --world:draw()
     if aura.canInteract then
         love.graphics.print("can: true"..aura.interact.name, 0, 0)
+        if aura.showInteractBox then   
+            love.graphics.draw(interactBox, 160, 460, nil, 5, 4.6)
+            love.graphics.setColor(0, 0, 0)
+            for i = 1, #aura.interactTextTable do
+                local j = i - 39
+                if i < 40 then
+                    if aura.interactTextTable[i] == 'i' then 
+                        love.graphics.print(aura.interactTextTable[i], 180 + (i * 10.7), 480) 
+                    else
+                        love.graphics.print(aura.interactTextTable[i], 180 + (i * 10.5), 480)
+                    end 
+                else
+                    if aura.interactTextTable[i] == 'i' then 
+                        love.graphics.print(aura.interactTextTable[i], 180 + (j * 10.7), 510) 
+                    else
+                        love.graphics.print(aura.interactTextTable[i], 180 + (j * 10.5), 510)
+                    end 
+                end   
+            end
+        end
+        love.graphics.setColor(255, 255, 255)
     else
         love.graphics.print("can: false"..aura.interact.name, 0, 0)
     end

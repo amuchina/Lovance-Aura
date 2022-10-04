@@ -187,66 +187,79 @@
   <object id="16" name="flamingo" x="129.125" y="202.25" width="8.25" height="16.875">
    <properties>
     <property name="queryDirection" value="left"/>
+    <property name="queryString" value="A sweet flamingo-shaped plush. You can pick it up"/>
    </properties>
   </object>
   <object id="17" name="koala" x="218.375" y="156.125" width="7.83333" height="7.5">
    <properties>
     <property name="queryDirection" value="right"/>
+    <property name="queryString" value="A sweet koala-shaped plush. You can pick it up"/>
    </properties>
   </object>
   <object id="18" name="diary" class="static" x="271.25" y="206.458" width="6.625" height="11.1667">
    <properties>
     <property name="queryDirection" value="right"/>
+    <property name="queryString" value="A closed diary. It looks like a dream diary. You can open it"/>
    </properties>
   </object>
   <object id="19" name="whale" x="271.083" y="229.333" width="6.79167" height="13.2917">
    <properties>
     <property name="queryDirection" value="right"/>
+    <property name="queryString" value="A sweet whale-shaped plush. You can pick it up"/>
    </properties>
   </object>
   <object id="20" name="fish" x="283" y="297.792" width="6.58333" height="7.58333">
    <properties>
     <property name="queryDirection" value="right"/>
+    <property name="queryString" value="A sweet fish-shaped plush. You can pick it up"/>
    </properties>
   </object>
   <object id="21" name="bed" class="static" x="137.125" y="156.25" width="7.375" height="36.375">
    <properties>
     <property name="queryDirection" value="left"/>
+    <property name="queryString" value="A comfortable bed. You want to sleep"/>
    </properties>
   </object>
   <object id="22" name="window" class="static" x="189.5" y="156.25" width="19.25" height="6.75">
    <properties>
     <property name="queryDirection" value="up"/>
+    <property name="queryString" value="A deep-sky window. You look trough it"/>
    </properties>
   </object>
   <object id="23" name="bookshelf" class="static" x="268.125" y="174.75" width="21.625" height="7.875">
    <properties>
     <property name="queryDirection" value="up"/>
+    <property name="queryString" value="A bookshelf full of wise books. You want to learn many things"/>
    </properties>
   </object>
   <object id="24" name="wardrobe" class="static" x="136.375" y="288.25" width="7.75" height="18.125">
    <properties>
     <property name="queryDirection" value="left"/>
+    <property name="queryString" value="A wardrobe full of lovely clothes. There is a flamingo poster on it"/>
    </properties>
   </object>
   <object id="29" name="koala" x="228.667" y="166" width="12.3333" height="7.33333">
    <properties>
     <property name="queryDirection" value="up"/>
+    <property name="queryString" value="A sweet koala-shaped plush. You can pick it up"/>
    </properties>
   </object>
   <object id="30" name="diary" class="static" x="282.333" y="191" width="22.3333" height="7.33333">
    <properties>
     <property name="queryDirection" value="down"/>
+    <property name="queryString" value="A closed diary. It looks like a dream diary. You can open it"/>
    </properties>
   </object>
   <object id="32" name="whale" x="283" y="260.667" width="21.6667" height="7.33333">
    <properties>
     <property name="queryDirection" value="up"/>
+    <property name="queryString" value="A sweet whale-shaped plush. You can pick it up"/>
    </properties>
   </object>
   <object id="34" name="fish" x="290.333" y="285.667" width="17" height="6">
    <properties>
     <property name="queryDirection" value="down"/>
+    <property name="queryString" value="A sweet fish-shaped plush. You can pick it up"/>
    </properties>
   </object>
  </objectgroup>

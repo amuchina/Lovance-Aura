@@ -490,7 +490,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["queryDirection"] = "left"
+            ["queryDirection"] = "left",
+            ["queryString"] = "A sweet flamingo-shaped plush.You can pick it up"
           }
         },
         {
@@ -505,7 +506,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["queryDirection"] = "right"
+            ["queryDirection"] = "right",
+            ["queryString"] = "A sweet koala-shaped plush.You can pick it up"
           }
         },
         {
@@ -520,7 +522,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["queryDirection"] = "right"
+            ["queryDirection"] = "right",
+            ["queryString"] = "A closed diary. It looks like a dream diary.You can open it"
           }
         },
         {
@@ -535,7 +538,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["queryDirection"] = "right"
+            ["queryDirection"] = "right",
+            ["queryString"] = "A sweet whale-shaped plush.You can pick it up"
           }
         },
         {
@@ -550,7 +554,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["queryDirection"] = "right"
+            ["queryDirection"] = "right",
+            ["queryString"] = "A sweet fish-shaped plush.You can pick it up"
           }
         },
         {
@@ -565,7 +570,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["queryDirection"] = "left"
+            ["queryDirection"] = "left",
+            ["queryString"] = "A comfortable bed.You want to sleep"
           }
         },
         {
@@ -580,7 +586,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["queryDirection"] = "up"
+            ["queryDirection"] = "up",
+            ["queryString"] = "A deep-sky window.You look trough it"
           }
         },
         {
@@ -595,7 +602,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["queryDirection"] = "up"
+            ["queryDirection"] = "up",
+            ["queryString"] = "A bookshelf full of wise books.You want to learn many things"
           }
         },
         {
@@ -610,7 +618,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["queryDirection"] = "left"
+            ["queryDirection"] = "left",
+            ["queryString"] = "A wardrobe full of lovely clothes.There is a flamingo poster on it"
           }
         },
         {
@@ -625,7 +634,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["queryDirection"] = "up"
+            ["queryDirection"] = "up",
+            ["queryString"] = "A sweet koala-shaped plush.You can pick it up"
           }
         },
         {
@@ -640,7 +650,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["queryDirection"] = "down"
+            ["queryDirection"] = "down",
+            ["queryString"] = "A closed diary.It looks like a dream diary.You can open it"
           }
         },
         {
@@ -655,7 +666,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["queryDirection"] = "up"
+            ["queryDirection"] = "up",
+            ["queryString"] = "A sweet whale-shaped plush.You can pick it up"
           }
         },
         {
@@ -670,7 +682,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["queryDirection"] = "down"
+            ["queryDirection"] = "down",
+            ["queryString"] = "A sweet fish-shaped plush.You can pick it up"
           }
         }
       }
