@@ -808,7 +808,7 @@ return {
         },
         {
           id = 10,
-          name = "",
+          name = "wall",
           class = "",
           shape = "rectangle",
           x = 312,
@@ -821,7 +821,7 @@ return {
         },
         {
           id = 11,
-          name = "",
+          name = "wall",
           class = "",
           shape = "rectangle",
           x = 260.125,
@@ -834,7 +834,7 @@ return {
         },
         {
           id = 12,
-          name = "",
+          name = "wall",
           class = "",
           shape = "rectangle",
           x = 260,
@@ -847,7 +847,7 @@ return {
         },
         {
           id = 13,
-          name = "",
+          name = "wall",
           class = "",
           shape = "rectangle",
           x = 98.875,
@@ -860,7 +860,7 @@ return {
         },
         {
           id = 14,
-          name = "",
+          name = "wall",
           class = "",
           shape = "rectangle",
           x = 104,
@@ -873,7 +873,7 @@ return {
         },
         {
           id = 15,
-          name = "",
+          name = "wall",
           class = "",
           shape = "rectangle",
           x = 202.75,
