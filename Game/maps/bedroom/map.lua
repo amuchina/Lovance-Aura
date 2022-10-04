@@ -10,7 +10,7 @@ return {
   tilewidth = 52,
   tileheight = 52,
   nextlayerid = 19,
-  nextobjectid = 35,
+  nextobjectid = 36,
   properties = {},
   tilesets = {
     {
@@ -491,7 +491,7 @@ return {
           visible = true,
           properties = {
             ["queryDirection"] = "left",
-            ["queryString"] = "A sweet flamingo-shaped plush.You can pick it up"
+            ["queryString"] = "A sweet flamingo-shaped plush. You can pick it up"
           }
         },
         {
@@ -507,7 +507,7 @@ return {
           visible = true,
           properties = {
             ["queryDirection"] = "right",
-            ["queryString"] = "A sweet koala-shaped plush.You can pick it up"
+            ["queryString"] = "A sweet koala-shaped plush. You can pick it up"
           }
         },
         {
@@ -523,7 +523,7 @@ return {
           visible = true,
           properties = {
             ["queryDirection"] = "right",
-            ["queryString"] = "A closed diary. It looks like a dream diary.You can open it"
+            ["queryString"] = "A closed diary. It looks like a dream diary. You can open it"
           }
         },
         {
@@ -539,7 +539,7 @@ return {
           visible = true,
           properties = {
             ["queryDirection"] = "right",
-            ["queryString"] = "A sweet whale-shaped plush.You can pick it up"
+            ["queryString"] = "A sweet whale-shaped plush. You can pick it up"
           }
         },
         {
@@ -555,7 +555,7 @@ return {
           visible = true,
           properties = {
             ["queryDirection"] = "right",
-            ["queryString"] = "A sweet fish-shaped plush.You can pick it up"
+            ["queryString"] = "A sweet fish-shaped plush. You can pick it up"
           }
         },
         {
@@ -571,7 +571,7 @@ return {
           visible = true,
           properties = {
             ["queryDirection"] = "left",
-            ["queryString"] = "A comfortable bed.You want to sleep"
+            ["queryString"] = "A comfortable bed. You want to sleep"
           }
         },
         {
@@ -587,7 +587,7 @@ return {
           visible = true,
           properties = {
             ["queryDirection"] = "up",
-            ["queryString"] = "A deep-sky window.You look trough it"
+            ["queryString"] = "A deep-sky window. You look trough it"
           }
         },
         {
@@ -603,7 +603,7 @@ return {
           visible = true,
           properties = {
             ["queryDirection"] = "up",
-            ["queryString"] = "A bookshelf full of wise books.You want to learn many things"
+            ["queryString"] = "A bookshelf full of wise books. You want to learn many things"
           }
         },
         {
@@ -619,7 +619,7 @@ return {
           visible = true,
           properties = {
             ["queryDirection"] = "left",
-            ["queryString"] = "A wardrobe full of lovely clothes.There is a flamingo poster on it"
+            ["queryString"] = "A wardrobe full of lovely clothes. There is a flamingo poster on it"
           }
         },
         {
@@ -635,7 +635,7 @@ return {
           visible = true,
           properties = {
             ["queryDirection"] = "up",
-            ["queryString"] = "A sweet koala-shaped plush.You can pick it up"
+            ["queryString"] = "A sweet koala-shaped plush. You can pick it up"
           }
         },
         {
@@ -651,7 +651,7 @@ return {
           visible = true,
           properties = {
             ["queryDirection"] = "down",
-            ["queryString"] = "A closed diary.It looks like a dream diary.You can open it"
+            ["queryString"] = "A closed diary. It looks like a dream diary. You can open it"
           }
         },
         {
@@ -667,7 +667,7 @@ return {
           visible = true,
           properties = {
             ["queryDirection"] = "up",
-            ["queryString"] = "A sweet whale-shaped plush.You can pick it up"
+            ["queryString"] = "A sweet whale-shaped plush. You can pick it up"
           }
         },
         {
@@ -683,7 +683,7 @@ return {
           visible = true,
           properties = {
             ["queryDirection"] = "down",
-            ["queryString"] = "A sweet fish-shaped plush.You can pick it up"
+            ["queryString"] = "A sweet fish-shaped plush. You can pick it up"
           }
         }
       }
@@ -893,6 +893,19 @@ return {
           y = 226.333,
           width = 19.6667,
           height = 14.6667,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 35,
+          name = "diary",
+          class = "",
+          shape = "rectangle",
+          x = 284,
+          y = 206.333,
+          width = 19.6667,
+          height = 14,
           rotation = 0,
           visible = true,
           properties = {}

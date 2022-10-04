@@ -32,7 +32,7 @@ function love.load()
     aura.collider:setFixedRotation(true)
     aura.collider:setCollisionClass('Player')
     aura.canInteract = false
-    aura.interact = { name = '', dir = ''}
+    aura.interact = { name = '', dir = '', class = ''}
     aura.interactTextTable = {}
     aura.showInteractBox = false
 
@@ -77,6 +77,7 @@ function love.load()
             queryBox.name = obj.name
             queryBox.queryDirection = obj.properties.queryDirection
             queryBox.queryString = obj.properties.queryString
+            queryBox.destroyed = false
             
             table.insert(queryBoxs, queryBox)
         end
@@ -89,29 +90,26 @@ function love.update(dt)
     local vx = 0
     local vy = 0
 
-    if love.keyboard.isDown("right") then
+    if love.keyboard.isDown("right","d") then
         aura.dir = "right"
         vx = aura.speed
         aura.animate = aura.moveAnimations.right
         isPlayerMoving = true
-    elseif love.keyboard.isDown("left") then
+    elseif love.keyboard.isDown("left","a") then
         aura.dir = "left"
         vx = - aura.speed
         aura.animate = aura.moveAnimations.left
         isPlayerMoving = true
-    elseif love.keyboard.isDown("up") then
+    elseif love.keyboard.isDown("up","w") then
         aura.dir = "up"
         vy = - aura.speed
         aura.animate = aura.moveAnimations.up
         isPlayerMoving = true
-    elseif love.keyboard.isDown("down") then
+    elseif love.keyboard.isDown("down","s") then
         aura.dir = "down"
         vy = aura.speed
         aura.animate = aura.moveAnimations.down
         isPlayerMoving = true
-    end
-    if love.keyboard.isDown("return") then
-        aura.showInteractBox = true
     end
 
     aura.collider:setLinearVelocity(vx, vy)
@@ -124,75 +122,104 @@ function love.update(dt)
     aura.x = aura.collider:getX() - 16
     aura.y = aura.collider:getY() - 40
 
-    if aura.collider:enter('Ghost') then
-        aura.canInteract = true
-    end
-
     for _, queryBox in pairs(queryBoxs) do
         for _, object in pairs(objects) do
-            if queryBox:enter('Player') then
-                if queryBox.name == object.name and object.class == 'Pickable' then
-                    if queryBox.queryDirection == aura.dir then
-                        aura.interact.name = queryBox.name
-                        aura.interact.dir = queryBox.queryDirection
+            if not queryBox.destroyed then
+                if queryBox:enter('Player') then
+                    aura.canInteract = true
+                    if queryBox.name == object.name then
+                        if object.class == 'Pickable' then
+                            if queryBox.queryDirection == aura.dir then
+                                aura.interact.name = queryBox.name
+                                aura.interact.dir = queryBox.queryDirection
+                                aura.interact.class = object.class
+                            end
+                        else
+                            if queryBox.queryDirection == aura.dir then
+                                aura.interact.dir = queryBox.queryDirection
+                                aura.interact.class = object.class
+                            end
+                        end
+                    end
+
+                    if not queryBox.destroyed then
+                        for i = 1, #queryBox.queryString do 
+                            aura.interactTextTable[i] = queryBox.queryString:sub(i, i)
+                        end
                     end
                 end
-                for i = 1, #queryBox.queryString do 
-                    aura.interactTextTable[i] = queryBox.queryString:sub(i, i)
-                end
-            end
-            if queryBox:stay('Player') then
-                if aura.interact.name ~= '' then
-                    local f = false;
-                    if aura.interact.dir == aura.dir then
-                        f = true;
+                if queryBox:stay('Player') then
+                    if not queryBox.destroyed then
+                        for i = 1, #queryBox.queryString do 
+                            aura.interactTextTable[i] = queryBox.queryString:sub(i, i)
+                        end
+                        aura.canInteract = true
+                    else
+                        aura.canInteract = false
                     end
-                    if not f then
-                        aura.interact.name = ''
-                    end 
-                elseif queryBox.name == object.name and object.class == 'Pickable' then
-                    if queryBox.queryDirection == aura.dir then
-                        aura.interact.name = queryBox.name
-                        aura.interact.dir = queryBox.queryDirection
+                    if aura.interact.name ~= '' then
+                        local f = false;
+                        if aura.interact.dir == aura.dir then
+                            f = true;
+                        end
+                        if not f then
+                            aura.interact.name = ''
+                        end
+                    elseif queryBox.name == object.name then
+                        if object.class == 'Pickable' then
+                            if queryBox.queryDirection == aura.dir then
+                                aura.interact.name = queryBox.name
+                                aura.interact.dir = queryBox.queryDirection
+                                aura.interact.class = object.class
+                            end
+                        else
+                            if queryBox.queryDirection == aura.dir then
+                                aura.interact.dir = queryBox.queryDirection
+                                aura.interact.class = object.class
+                            end
+                        end
                     end
-                end 
-                for i = 1, #queryBox.queryString do 
-                    aura.interactTextTable[i] = queryBox.queryString:sub(i, i)
                 end
             end
             if queryBox:exit('Player') then
-                aura.interact.name = ''
                 aura.showInteractBox = false
+                aura.interact.name = ''
                 aura.interactTextTable = {}
+                aura.canInteract = false
             end
         end
     end
 
-    if aura.collider:stay('Ghost') then
-        aura.canInteract = true
-    end 
-
     if aura.canInteract then
+        if love.keyboard.isDown('return') then
+            if aura.interact.name ~= '' then
+                aura.showInteractBox = true;
+            end
+            if aura.interact.class == nil then
+                aura.showInteractBox = true;
+            end
+
+        end
         if love.keyboard.isDown('z') then
             if aura.interact.name ~= '' then
                 bedroomMap.layers[aura.interact.name].visible = false
+
                 for _, queryBox in pairs(queryBoxs) do
                     if queryBox.name == aura.interact.name then
-                        queryBox:destroy() -- to fix
+                        queryBox.destroyed = true
+                        aura.showInteractBox = false
                     end
                 end
                 for _, object in pairs(objects) do
                     if object.name == aura.interact.name then
                         object:setCollisionClass('Ghost')
+                        aura.interact.name = ''
+                        aura.interact.dir = ''
                     end
                 end
             end
         end
     end
-
-    if aura.collider:exit('Ghost') then
-        aura.canInteract = false
-    end 
 
     aura.animate:update(dt)
 end
