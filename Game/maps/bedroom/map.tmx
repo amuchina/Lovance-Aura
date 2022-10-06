@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="8" height="8" tilewidth="52" tileheight="52" infinite="0" nextlayerid="19" nextobjectid="36">
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="8" height="8" tilewidth="52" tileheight="52" infinite="0" nextlayerid="19" nextobjectid="37">
  <tileset firstgid="1" name="tileset" tilewidth="52" tileheight="52" tilecount="36" columns="9">
   <image source="map-tileset/bedroomTileset.png" width="468" height="208"/>
  </tileset>
@@ -280,5 +280,6 @@
   <object id="15" name="wall" x="202.75" y="317.125" width="5.25" height="46.5"/>
   <object id="27" name="whale" class="Pickable" x="284.333" y="226.333" width="19.6667" height="14.6667"/>
   <object id="35" name="diary" x="284" y="206.333" width="19.6667" height="14"/>
+  <object id="36" name="window" x="176" y="115.667" width="46" height="28.6667"/>
  </objectgroup>
 </map>

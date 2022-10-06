@@ -24,64 +24,20 @@ function love.load()
 
     bedroomMap = sti('maps/bedroom/map.lua')
     
-    aura = {}
+    local x = 300
+    local y = 300
 
-    aura.x = 300
-    aura.y = 300
-    aura.collider = world:newBSGRectangleCollider(aura.x, aura.y, 32, 20, 0)
-    aura.collider:setFixedRotation(true)
-    aura.collider:setCollisionClass('Player')
-    aura.canInteract = false
-    aura.interact = { name = '', dir = '', class = ''}
-    aura.interactTextTable = {}
-    aura.showInteractBox = false
+    Aura = require 'aura'
+    aura = Aura.new(x,y,world)
 
-    aura.dir = "down"
-    
-    aura.speed = 150
-    
-    aura.spritesheet = love.graphics.newImage('assets/homeAura/HomeAura-spritesheet.png')
-    aura.grid = anim8.newGrid(32, 50, aura.spritesheet:getWidth(), aura.spritesheet:getHeight())
+    Objects = require 'item/objects'
+    objects = Objects.new(bedroomMap,world)
 
-    aura.moveAnimations = {}
-    aura.moveAnimations.down = anim8.newAnimation(aura.grid('1-4', 1), 0.2)
-    aura.moveAnimations.left = anim8.newAnimation(aura.grid('1-4', 2), 0.2)
-    aura.moveAnimations.right = anim8.newAnimation(aura.grid('1-4', 3), 0.2)
-    aura.moveAnimations.up = anim8.newAnimation(aura.grid('1-4', 4), 0.2)
-    
-    aura.animate = aura.moveAnimations.down
+    QueryBoxs = require 'item/queryBoxs'
+    queryBoxs = QueryBoxs.new(bedroomMap,world)
 
-    objects = {}
-
-    if bedroomMap.layers["objects"] then
-        for _, obj in pairs(bedroomMap.layers["objects"].objects) do
-            local object = world:newRectangleCollider((obj.x * scale) + offsetx * scale, (obj.y * scale) + offsety * scale, obj.width * scale, obj.height * scale)
-            object:setType('static')
-            if obj.class == "Pickable" then 
-                object:setCollisionClass('Pickable')
-                object.class = obj.class
-            end
-            object.name = obj.name
-
-            table.insert(objects, object)
-        end
-    end
-
-    queryBoxs = {}
-
-    if bedroomMap.layers["queryBoxs"] then
-        for _, obj in pairs(bedroomMap.layers["queryBoxs"].objects) do
-            local queryBox = world:newRectangleCollider((obj.x * scale) + offsetx * scale, (obj.y * scale) + offsety * scale, obj.width * scale, obj.height * scale)
-            queryBox:setType('static')
-            queryBox:setCollisionClass('Ghost')
-            queryBox.name = obj.name
-            queryBox.queryDirection = obj.properties.queryDirection
-            queryBox.queryString = obj.properties.queryString
-            queryBox.destroyed = false
-            
-            table.insert(queryBoxs, queryBox)
-        end
-    end
+    Controlls = require 'item/controlls'
+    controlls = Controlls.new(bedroomMap,world,aura,objects,queryBoxs)
 end
 
 function love.update(dt)
@@ -119,109 +75,14 @@ function love.update(dt)
     end
 
     world:update(dt)
+
     aura.x = aura.collider:getX() - 16
     aura.y = aura.collider:getY() - 40
 
-    for _, queryBox in pairs(queryBoxs) do
-        for _, object in pairs(objects) do
-            if not queryBox.destroyed then
-                if queryBox:enter('Player') then
-                    aura.canInteract = true
-                    if queryBox.name == object.name then
-                        if object.class == 'Pickable' then
-                            if queryBox.queryDirection == aura.dir then
-                                aura.interact.name = queryBox.name
-                                aura.interact.dir = queryBox.queryDirection
-                                aura.interact.class = object.class
-                            end
-                        else
-                            if queryBox.queryDirection == aura.dir then
-                                aura.interact.dir = queryBox.queryDirection
-                                aura.interact.class = object.class
-                            end
-                        end
-                    end
-
-                    if not queryBox.destroyed then
-                        for i = 1, #queryBox.queryString do 
-                            aura.interactTextTable[i] = queryBox.queryString:sub(i, i)
-                        end
-                    end
-                end
-                if queryBox:stay('Player') then
-                    if not queryBox.destroyed then
-                        for i = 1, #queryBox.queryString do 
-                            aura.interactTextTable[i] = queryBox.queryString:sub(i, i)
-                        end
-                        aura.canInteract = true
-                    else
-                        aura.canInteract = false
-                    end
-                    if aura.interact.name ~= '' then
-                        local f = false;
-                        if aura.interact.dir == aura.dir then
-                            f = true;
-                        end
-                        if not f then
-                            aura.interact.name = ''
-                        end
-                    elseif queryBox.name == object.name then
-                        if object.class == 'Pickable' then
-                            if queryBox.queryDirection == aura.dir then
-                                aura.interact.name = queryBox.name
-                                aura.interact.dir = queryBox.queryDirection
-                                aura.interact.class = object.class
-                            end
-                        else
-                            if queryBox.queryDirection == aura.dir then
-                                aura.interact.dir = queryBox.queryDirection
-                                aura.interact.class = object.class
-                            end
-                        end
-                    end
-                end
-            end
-            if queryBox:exit('Player') then
-                aura.showInteractBox = false
-                aura.interact.name = ''
-                aura.interactTextTable = {}
-                aura.canInteract = false
-            end
-        end
-    end
-
-    if aura.canInteract then
-        if love.keyboard.isDown('return') then
-            if aura.interact.name ~= '' then
-                aura.showInteractBox = true;
-            end
-            if aura.interact.class == nil then
-                aura.showInteractBox = true;
-            end
-
-        end
-        if love.keyboard.isDown('z') then
-            if aura.interact.name ~= '' then
-                bedroomMap.layers[aura.interact.name].visible = false
-
-                for _, queryBox in pairs(queryBoxs) do
-                    if queryBox.name == aura.interact.name then
-                        queryBox.destroyed = true
-                        aura.showInteractBox = false
-                    end
-                end
-                for _, object in pairs(objects) do
-                    if object.name == aura.interact.name then
-                        object:setCollisionClass('Ghost')
-                        aura.interact.name = ''
-                        aura.interact.dir = ''
-                    end
-                end
-            end
-        end
-    end
-
+    controlls.doControlls()
+    
     aura.animate:update(dt)
+    
 end
 
 function love.draw()
@@ -253,6 +114,7 @@ function love.draw()
     else
         love.graphics.print("can: false"..aura.interact.name, 0, 0)
     end
+    
     if flag then
         love.graphics.print("flag: true", 0, 20)
     else
