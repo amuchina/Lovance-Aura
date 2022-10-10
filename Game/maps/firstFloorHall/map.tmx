@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="8" height="8" tilewidth="52" tileheight="52" infinite="0" nextlayerid="12" nextobjectid="12">
+ <tileset firstgid="1" name="firstFloorHallTileset" tilewidth="52" tileheight="52" tilecount="20" columns="4">
+  <image source="map-tileset/firstFloorHallTileset.png" width="208" height="260"/>
+ </tileset>
+ <layer id="1" name="background" width="8" height="8">
+  <data encoding="csv">
+20,20,20,20,20,20,20,20,
+20,20,20,20,20,20,20,20,
+20,20,20,20,20,20,20,20,
+20,20,20,20,20,20,20,20,
+20,20,20,20,20,20,20,20,
+20,20,20,20,20,20,20,20,
+20,20,20,20,20,20,20,20,
+20,20,20,20,20,20,20,20
+</data>
+ </layer>
+ <layer id="2" name="ground" width="8" height="8">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,3,2,2,2,2,2,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="3" name="walls" width="8" height="8">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,1,1,1,1,1,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="4" name="wallsdetails" width="8" height="8">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,15,15,15,15,15,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="5" name="roomdetails" width="8" height="8">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,9,0,0,0,10,0,
+0,0,0,0,0,0,12,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="6" name="plant" width="8" height="8" offsetx="0" offsety="2.1875">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,13,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="7" name="doors" width="8" height="8">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,14,14,0,14,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="8" name="roomborder" width="8" height="8">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,16,16,16,16,16,0,
+0,16,0,0,0,0,0,17,
+18,0,0,0,0,0,0,17,
+0,19,19,19,19,19,19,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="9" name="rmbrdr2" width="8" height="8">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,4,0,0,0,0,0,5,
+4,18,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+7,0,0,0,0,0,0,6,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="10" name="objects">
+  <object id="1" name="wall" x="52" y="204" width="317.818" height="3.90909"/>
+  <object id="2" name="wall" x="364" y="204.182" width="6" height="55.8182"/>
+  <object id="3" name="wall" x="52" y="260.182" width="311.909" height="5.54545"/>
+  <object id="4" name="wall" x="46.0909" y="207.909" width="5.72727" height="52.3636"/>
+  <object id="6" name="lovely plant" x="281.957" y="207.565" width="7.13043" height="2.6087"/>
+ </objectgroup>
+ <objectgroup id="11" name="queryBoxs">
+  <object id="7" name="bedroomdoor" class="teleport" x="331.813" y="207.938" width="12.125" height="4.3125">
+   <properties>
+    <property name="queryDirection" value="up"/>
+    <property name="queryTeleport" value="maps/bedroom/map.lua"/>
+   </properties>
+  </object>
+  <object id="8" name="lovely plant" class="static" x="281.313" y="207.063" width="8.125" height="6.125">
+   <properties>
+    <property name="queryDirection" value="up"/>
+    <property name="queryString" value="A lovely plant. It has a good smell"/>
+   </properties>
+  </object>
+  <object id="9" name="bathdoor" class="teleport" x="228.563" y="207.938" width="10.8125" height="3.6875">
+   <properties>
+    <property name="queryDirection" value="up"/>
+    <property name="queryTeleport" value=""/>
+   </properties>
+  </object>
+  <object id="10" name="bedroom2door" class="static" x="177.438" y="208" width="9.5625" height="3.625">
+   <properties>
+    <property name="queryDirection" value="up"/>
+    <property name="queryString" value="This door is locked"/>
+   </properties>
+  </object>
+  <object id="11" name="goingdownstairs" class="teleport" x="51.8182" y="208" width="5.45455" height="52.0909">
+   <properties>
+    <property name="queryDirection" value="left"/>
+    <property name="queryTeleport" value=""/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

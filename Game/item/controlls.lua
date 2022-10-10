@@ -1,9 +1,8 @@
-
 _G.love = require("love")
 
 local Controlls = {}
 
-function Controlls.new(bedroomMap,world,aura,objects,queryBoxs)
+function Controlls.new(Map,world,aura,objects,queryBoxs)
     local controlls = {}
 
     function controlls.doControlls()
@@ -73,8 +72,26 @@ function Controlls.new(bedroomMap,world,aura,objects,queryBoxs)
                     aura.canInteract = false
                 end
             end
+
+            -- teleport controls
+
+            if queryBox.teleport ~= nil then
+                if queryBox:enter('Player') then
+                    if queryBox.class == 'Teleport' then
+                        if queryBox.queryDirection == aura.dir then
+                            queryBoxs = {}
+                            objects = {}
+                            Map = sti(queryBox.teleport)
+                            aura = Aura.new(300,300,world) --fix
+                            objects = Objects.new(Map,world)
+                            queryBoxs = QueryBoxs.new(Map,world)
+                            return true
+                        end
+                    end
+                end
+            end
         end
-        
+
         -- queryBoxs interactions
         
         if aura.canInteract then
@@ -89,8 +106,7 @@ function Controlls.new(bedroomMap,world,aura,objects,queryBoxs)
             end
             if love.keyboard.isDown('z') then
                 if aura.interact.name ~= '' then
-                    bedroomMap.layers[aura.interact.name].visible = false
-        
+                    Map.layers[aura.interact.name].visible = false
                     for _, queryBox in pairs(queryBoxs) do
                         if queryBox.name == aura.interact.name then
                             queryBox.destroyed = true
@@ -108,7 +124,6 @@ function Controlls.new(bedroomMap,world,aura,objects,queryBoxs)
             end
         end
     end
-    
     return controlls
 end
 

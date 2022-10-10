@@ -13,6 +13,7 @@ function love.load()
     world:addCollisionClass('Solid')
     world:addCollisionClass('Player')
     world:addCollisionClass('Ghost', {ignores = {'Player'}})
+    world:addCollisionClass('Teleport', {ignores = {'Player'}})
     world:addCollisionClass('Pickable')
 
     interactBox = love.graphics.newImage("assets/UI/dialogbox_default.png")
@@ -22,7 +23,9 @@ function love.load()
     anim8 = require 'libs/anim8'
     sti = require 'libs/sti'
 
-    bedroomMap = sti('maps/bedroom/map.lua')
+    maps = {'maps/bedroom/map.lua', 'maps/firstFloorHall/map.lua'}
+
+    Map = sti(maps[2])
     
     local x = 300
     local y = 300
@@ -31,17 +34,18 @@ function love.load()
     aura = Aura.new(x,y,world)
 
     Objects = require 'item/objects'
-    objects = Objects.new(bedroomMap,world)
+    objects = Objects.new(Map,world)
 
     QueryBoxs = require 'item/queryBoxs'
-    queryBoxs = QueryBoxs.new(bedroomMap,world)
+    queryBoxs = QueryBoxs.new(Map,world)
 
     Controlls = require 'item/controlls'
-    controlls = Controlls.new(bedroomMap,world,aura,objects,queryBoxs)
+    controlls = Controlls.new(Map,world,aura,objects,queryBoxs)
 end
 
 function love.update(dt)
     local isPlayerMoving = false
+    local isTeleporting = false
 
     local vx = 0
     local vy = 0
@@ -79,14 +83,17 @@ function love.update(dt)
     aura.x = aura.collider:getX() - 16
     aura.y = aura.collider:getY() - 40
 
-    controlls.doControlls()
+    isTeleporting = controlls.doControlls()
+    if isTeleporting then
+        
+    end
     
     aura.animate:update(dt)
     
 end
 
 function love.draw()
-    bedroomMap:draw(offsetx, offsety, scale, scale)
+    Map:draw(offsetx, offsety, scale, scale)
     aura.animate:draw(aura.spritesheet, aura.x, aura.y)
     if aura.canInteract then
         love.graphics.print("can: true"..aura.interact.name, 0, 0)
