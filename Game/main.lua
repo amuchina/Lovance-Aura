@@ -22,10 +22,10 @@ function love.load()
 
     anim8 = require 'libs/anim8'
     sti = require 'libs/sti'
+    STI = require 'libs/sti'
 
-    maps = {'maps/bedroom/map.lua', 'maps/firstFloorHall/map.lua'}
-
-    Map = sti(maps[2])
+    Map = sti('maps/firstFloorHall/map.lua')
+    MapTo = ''
     
     local x = 300
     local y = 300
@@ -45,51 +45,67 @@ end
 
 function love.update(dt)
     local isPlayerMoving = false
-    local isTeleporting = false
 
     local vx = 0
     local vy = 0
 
-    if love.keyboard.isDown("right","d") then
-        aura.dir = "right"
-        vx = aura.speed
-        aura.animate = aura.moveAnimations.right
-        isPlayerMoving = true
-    elseif love.keyboard.isDown("left","a") then
-        aura.dir = "left"
-        vx = - aura.speed
-        aura.animate = aura.moveAnimations.left
-        isPlayerMoving = true
-    elseif love.keyboard.isDown("up","w") then
-        aura.dir = "up"
-        vy = - aura.speed
-        aura.animate = aura.moveAnimations.up
-        isPlayerMoving = true
-    elseif love.keyboard.isDown("down","s") then
-        aura.dir = "down"
-        vy = aura.speed
-        aura.animate = aura.moveAnimations.down
-        isPlayerMoving = true
-    end
+    if not aura.isTeleporting then
+        if love.keyboard.isDown("right","d") then
+            aura.dir = "right"
+            vx = aura.speed
+            aura.animate = aura.moveAnimations.right
+            isPlayerMoving = true
+        elseif love.keyboard.isDown("left","a") then
+            aura.dir = "left"
+            vx = - aura.speed
+            aura.animate = aura.moveAnimations.left
+            isPlayerMoving = true
+        elseif love.keyboard.isDown("up","w") then
+            aura.dir = "up"
+            vy = - aura.speed
+            aura.animate = aura.moveAnimations.up
+            isPlayerMoving = true
+        elseif love.keyboard.isDown("down","s") then
+            aura.dir = "down"
+            vy = aura.speed
+            aura.animate = aura.moveAnimations.down
+            isPlayerMoving = true
+        end
 
-    aura.collider:setLinearVelocity(vx, vy)
+        aura.collider:setLinearVelocity(vx, vy)
 
-    if isPlayerMoving == false then
-        aura.animate:gotoFrame(2)
-    end
+        if isPlayerMoving == false then
+            aura.animate:gotoFrame(2)
+        end
 
-    world:update(dt)
+        world:update(dt)
 
-    aura.x = aura.collider:getX() - 16
-    aura.y = aura.collider:getY() - 40
-
-    isTeleporting = controlls.doControlls()
-    if isTeleporting then
+        aura.x = aura.collider:getX() - 16
+        aura.y = aura.collider:getY() - 40
         
+        aura.animate:update(dt)
+
+        flag = controlls.doControlls(flag)
+    else
+        queryBoxs = {}
+        objects = {}
+        world:destroy()
+        world = wf.newWorld(0, 0)
+        world:addCollisionClass('Solid')
+        world:addCollisionClass('Player')
+        world:addCollisionClass('Ghost', {ignores = {'Player'}})
+        world:addCollisionClass('Teleport', {ignores = {'Player'}})
+        world:addCollisionClass('Pickable')
+        STI:flush()
+        MapTo = aura.teleportingTo
+        Map = STI.__call(_,MapTo)
+        aura = Aura.new(300,300,world)
+        objects = Objects.new(Map,world)
+        queryBoxs = QueryBoxs.new(Map,world)
+        controlls = Controlls.new(Map,world,aura,objects,queryBoxs)
     end
     
-    aura.animate:update(dt)
-    
+
 end
 
 function love.draw()
@@ -123,7 +139,7 @@ function love.draw()
     end
     
     if flag then
-        love.graphics.print("flag: true", 0, 20)
+        love.graphics.print("flag: true "..MapTo , 0, 20)
     else
         love.graphics.print("flag: false", 0, 20)
     end

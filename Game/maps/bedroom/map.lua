@@ -10,7 +10,7 @@ return {
   tilewidth = 52,
   tileheight = 52,
   nextlayerid = 19,
-  nextobjectid = 37,
+  nextobjectid = 38,
   properties = {},
   tilesets = {
     {
@@ -684,6 +684,22 @@ return {
           properties = {
             ["queryDirection"] = "down",
             ["queryString"] = "A sweet fish-shaped plush. You can pick it up"
+          }
+        },
+        {
+          id = 37,
+          name = "firstFloorHall",
+          class = "teleport",
+          shape = "rectangle",
+          x = 208,
+          y = 354.333,
+          width = 52,
+          height = 9.66667,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["queryDirection"] = "down",
+            ["queryTeleport"] = "maps/firstFloorHall/map.lua"
           }
         }
       }

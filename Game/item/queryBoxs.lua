@@ -11,13 +11,14 @@ function QueryBoxs.new(Map,world)
             queryBox:setType('static')
             if obj.class == 'teleport' then
                 queryBox:setCollisionClass('Teleport')
+                queryBox.class = obj.class
                 queryBox.teleport = obj.properties.queryTeleport
             else
                 queryBox:setCollisionClass('Ghost')
+                queryBox.queryString = obj.properties.queryString
             end
             queryBox.name = obj.name
             queryBox.queryDirection = obj.properties.queryDirection
-            queryBox.queryString = obj.properties.queryString
             queryBox.destroyed = false
             
             table.insert(queryBoxs, queryBox)

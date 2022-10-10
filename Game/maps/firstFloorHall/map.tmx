@@ -111,14 +111,14 @@
 0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup id="10" name="objects">
+ <objectgroup id="10" name="objects" visible="0">
   <object id="1" name="wall" x="52" y="204" width="317.818" height="3.90909"/>
   <object id="2" name="wall" x="364" y="204.182" width="6" height="55.8182"/>
   <object id="3" name="wall" x="52" y="260.182" width="311.909" height="5.54545"/>
   <object id="4" name="wall" x="46.0909" y="207.909" width="5.72727" height="52.3636"/>
   <object id="6" name="lovely plant" x="281.957" y="207.565" width="7.13043" height="2.6087"/>
  </objectgroup>
- <objectgroup id="11" name="queryBoxs">
+ <objectgroup id="11" name="queryBoxs" visible="0">
   <object id="7" name="bedroomdoor" class="teleport" x="331.813" y="207.938" width="12.125" height="4.3125">
    <properties>
     <property name="queryDirection" value="up"/>

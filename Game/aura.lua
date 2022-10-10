@@ -13,6 +13,8 @@ function Aura.new(x, y, world)
         showInteractBox = false,
         dir = "down",
         speed = 150,
+        teleportingTo = '',
+        isTeleporting = false
     }
 
     aura.collider = world:newBSGRectangleCollider(aura.x, aura.y, 32, 20, 0)

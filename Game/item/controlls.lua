@@ -5,10 +5,11 @@ local Controlls = {}
 function Controlls.new(Map,world,aura,objects,queryBoxs)
     local controlls = {}
 
-    function controlls.doControlls()
+    function controlls.doControlls(flag)
+
         for _, queryBox in pairs(queryBoxs) do
             for _, object in pairs(objects) do
-                if not queryBox.destroyed then
+                if not queryBox.destroyed and queryBox.queryString ~= nil and not aura.isTeleporting then
                     if queryBox:enter('Player') then
                         aura.canInteract = true
                         if queryBox.name == object.name then
@@ -26,14 +27,14 @@ function Controlls.new(Map,world,aura,objects,queryBoxs)
                             end
                         end
         
-                        if not queryBox.destroyed then
-                            for i = 1, #queryBox.queryString do 
+                        for i = 1, #queryBox.queryString do 
+                            if not queryBox.destroyed and queryBox.queryString ~= nil then
                                 aura.interactTextTable[i] = queryBox.queryString:sub(i, i)
                             end
                         end
                     end
                     if queryBox:stay('Player') then
-                        if not queryBox.destroyed then
+                        if not queryBox.destroyed and queryBox.queryString ~= nil then
                             for i = 1, #queryBox.queryString do 
                                 aura.interactTextTable[i] = queryBox.queryString:sub(i, i)
                             end
@@ -65,29 +66,29 @@ function Controlls.new(Map,world,aura,objects,queryBoxs)
                         end
                     end
                 end
+                -- teleport controls
+
+                if queryBox:enter('Player') then
+                    if queryBox.teleport ~= nil then
+                        if queryBox.class == 'teleport' then
+                            if queryBox.queryDirection == aura.dir then
+                                aura.isTeleporting = true
+                                aura.interact.name = queryBox.name
+                                aura.interact.dir = queryBox.queryDirection
+                                aura.interact.class = queryBox.class
+                                aura.teleportingTo = queryBox.teleport
+                                flag = true
+                                return flag
+                            end
+                        end
+                    end
+                end
+
                 if queryBox:exit('Player') then
                     aura.showInteractBox = false
                     aura.interact.name = ''
                     aura.interactTextTable = {}
                     aura.canInteract = false
-                end
-            end
-
-            -- teleport controls
-
-            if queryBox.teleport ~= nil then
-                if queryBox:enter('Player') then
-                    if queryBox.class == 'Teleport' then
-                        if queryBox.queryDirection == aura.dir then
-                            queryBoxs = {}
-                            objects = {}
-                            Map = sti(queryBox.teleport)
-                            aura = Aura.new(300,300,world) --fix
-                            objects = Objects.new(Map,world)
-                            queryBoxs = QueryBoxs.new(Map,world)
-                            return true
-                        end
-                    end
                 end
             end
         end
