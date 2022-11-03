@@ -436,7 +436,7 @@ return {
           visible = true,
           properties = {
             ["queryDirection"] = "up",
-            ["queryTeleport"] = ""
+            ["queryTeleport"] = "maps/bathroom/map.lua"
           }
         },
         {

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="8" height="8" tilewidth="52" tileheight="52" infinite="0" nextlayerid="15" nextobjectid="38">
+ <editorsettings>
+  <export target="map.lua" format="lua"/>
+ </editorsettings>
+ <tileset firstgid="1" name="bathroomTileset" tilewidth="52" tileheight="52" tilecount="28" columns="4">
+  <image source="map-tileset/bathroomTileset.png" width="208" height="364"/>
+ </tileset>
+ <layer id="1" name="background" width="8" height="8" offsetx="3.33333e-07" offsety="0.666633">
+  <data encoding="csv">
+1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1
+</data>
+ </layer>
+ <layer id="2" name="ground" width="8" height="8" offsetx="14" offsety="52">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,2,2,2,0,0,0,
+0,0,2,2,2,0,0,0,
+0,0,2,2,2,0,0,0,
+0,0,2,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="3" name="walls" width="8" height="8" offsetx="14" offsety="52">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,3,3,3,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="4" name="roomborder" width="8" height="8" offsetx="14" offsety="52">
+  <data encoding="csv">
+0,21,25,25,25,22,0,0,
+0,27,0,0,0,28,0,0,
+0,27,0,0,0,28,0,0,
+0,27,0,0,0,28,0,0,
+0,27,0,0,0,28,0,0,
+0,27,0,28,26,24,0,0,
+0,1,1,1,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="5" name="rmbd2" width="8" height="8" offsetx="14" offsety="52">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,26,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="6" name="wc" width="8" height="8" offsetx="24.9773" offsety="17.25">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,6,0,0,0,
+0,0,0,0,10,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="7" name="sink" width="8" height="8" offsetx="14.4659" offsety="63.4091">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,7,0,0,0,0,
+0,0,0,11,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="8" name="mirror" width="8" height="8" offsetx="10.7614" offsety="41.4886">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,8,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="9" name="bathtub" width="8" height="8" offsetx="20.3636" offsety="58.5455">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,5,0,0,0,
+0,0,0,0,9,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="11" name="duck" width="8" height="8" offsetx="18" offsety="63.3333">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,4,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="10" name="cabinet" width="8" height="8" offsetx="2.90913" offsety="54">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,12,0,0,0,0,0,
+0,0,16,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="13" name="objects" visible="0" offsetx="2.83337" offsety="0.416667">
+  <object id="1" name="wall" x="167.031" y="316" width="5.18182" height="51.9091"/>
+  <object id="2" name="wall" x="167.034" y="311.667" width="109" height="5.25"/>
+  <object id="3" name="wall" x="110.818" y="154.455" width="5" height="213.284"/>
+  <object id="5" name="wall" x="111" y="152.181" width="65.2727" height="3.63636"/>
+  <object id="6" name="wall" x="214.637" y="153.091" width="62.4545" height="3.09091"/>
+  <object id="7" name="wall" x="271.58" y="153.295" width="4.8125" height="163.521"/>
+  <object id="8" name="wall" x="110.818" y="363.515" width="62.0909" height="4.63636"/>
+  <object id="11" name="sink" x="185.018" y="143.83" width="19.9375" height="37.0625"/>
+  <object id="12" name="sink" x="205.318" y="148.83" width="8.9375" height="13.125"/>
+  <object id="13" name="sink" x="176.011" y="148.71" width="9.125" height="12.9375"/>
+  <object id="14" name="cabinet" x="117.273" y="183.091" width="28" height="51.8182"/>
+  <object id="17" name="wc" x="241.182" y="268.637" width="27.9091" height="23"/>
+  <object id="18" name="wc" x="255.273" y="256.83" width="13.9375" height="12"/>
+  <object id="19" name="bathtub" x="231.886" y="178.591" width="38.125" height="72.125"/>
+  <object id="20" name="duck" class="Pickable" x="244.511" y="188.068" width="13.9375" height="10"/>
+ </objectgroup>
+ <objectgroup id="14" name="queryBoxs" visible="0" offsetx="0.590876" offsety="0.0227939">
+  <object id="22" name="firstFloorHall" class="teleport" x="117.667" y="357.545" width="51.9091" height="5.45455">
+   <properties>
+    <property name="queryDirection" value="down"/>
+    <property name="queryTeleport" value="maps/firstFloorHall/map.lua"/>
+   </properties>
+  </object>
+  <object id="23" name="wc" class="static" x="247" y="293.105" width="21.625" height="4.5">
+   <properties>
+    <property name="queryDirection" value="up"/>
+    <property name="queryString" value="A wc"/>
+   </properties>
+  </object>
+  <object id="24" name="wc" class="static" x="238.605" y="271.355" width="3.9375" height="20.8125">
+   <properties>
+    <property name="queryDirection" value="right"/>
+    <property name="queryString" value="A wc"/>
+   </properties>
+  </object>
+  <object id="25" name="bathtub" class="static" x="235.792" y="252.292" width="22" height="3.75">
+   <properties>
+    <property name="queryDirection" value="up"/>
+    <property name="queryString" value="A bathtub. It seems to be already filled."/>
+   </properties>
+  </object>
+  <object id="26" name="bathtub" class="static" x="228.23" y="214.188" width="4.625" height="33.1875">
+   <properties>
+    <property name="queryDirection" value="right"/>
+    <property name="queryString" value="A baththub. It seems to be already filled"/>
+   </properties>
+  </object>
+  <object id="27" name="duck" x="228.083" y="185.188" width="4.5625" height="18.9375">
+   <properties>
+    <property name="queryDirection" value="right"/>
+    <property name="queryString" value="A yellow duck. You can pick it up"/>
+   </properties>
+  </object>
+  <object id="28" name="bathtub" class="static" x="235.771" y="174.708" width="33.1875" height="4.0625">
+   <properties>
+    <property name="queryDirection" value="down"/>
+    <property name="queryString" value="A baththub. It seems to be already filled"/>
+   </properties>
+  </object>
+  <object id="30" name="sink" class="static" x="189.583" y="181.167" width="14.375" height="3.25">
+   <properties>
+    <property name="queryDirection" value="up"/>
+    <property name="queryString" value="A marble washbasin. You look inside the mirror and you see your beautiful face"/>
+   </properties>
+  </object>
+  <object id="37" name="cabinet" class="static" x="148.208" y="199.917" width="4.8125" height="28.625">
+   <properties>
+    <property name="queryDirection" value="left"/>
+    <property name="queryString" value="There is something similar to candies inside the cabinet. You can pick them up"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

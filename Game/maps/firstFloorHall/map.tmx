@@ -134,7 +134,7 @@
   <object id="9" name="bathdoor" class="teleport" x="228.563" y="207.938" width="10.8125" height="3.6875">
    <properties>
     <property name="queryDirection" value="up"/>
-    <property name="queryTeleport" value=""/>
+    <property name="queryTeleport" value="maps/bathroom/map.lua"/>
    </properties>
   </object>
   <object id="10" name="bedroom2door" class="static" x="177.438" y="208" width="9.5625" height="3.625">
