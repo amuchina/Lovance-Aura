@@ -14,8 +14,15 @@ function Aura.new(x, y, world)
         dir = "down",
         speed = 150,
         teleportingTo = '',
-        isTeleporting = false
+        isTeleporting = false,
+        teleportX = null,
+        teleportY = null
     }
+    aura.fireX = 200
+    aura.fireY = 200
+    aura.spritesheetFire = love.graphics.newImage('assets/homeAura/fireplace-stilesheet.png')
+    aura.gridFire = anim8.newGrid(52, 52, aura.spritesheetFire:getWidth(), aura.spritesheetFire:getHeight())
+    aura.fireAnimations =  anim8.newAnimation(aura.gridFire('1-4', 1), 0.2)
 
     aura.collider = world:newBSGRectangleCollider(aura.x, aura.y, 32, 20, 0)
     aura.collider:setFixedRotation(true)
@@ -32,6 +39,7 @@ function Aura.new(x, y, world)
     }
 
     aura.animate = aura.moveAnimations.down
+    aura.animateFire = aura.fireAnimations
     return aura
 end
 

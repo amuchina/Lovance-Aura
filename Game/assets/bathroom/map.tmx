@@ -3,10 +3,6 @@
  <editorsettings>
   <export target="map.lua" format="lua"/>
  </editorsettings>
- <properties>
-  <property name="spawnX" type="int" value="660"/>
-  <property name="spawnY" type="int" value="300"/>
- </properties>
  <tileset firstgid="1" name="bathroomTileset" tilewidth="52" tileheight="52" tilecount="28" columns="4">
   <image source="map-tileset/bathroomTileset.png" width="208" height="364"/>
  </tileset>
@@ -163,8 +159,6 @@
   <object id="22" name="firstFloorHall" class="teleport" x="117.667" y="357.545" width="51.9091" height="5.45455">
    <properties>
     <property name="queryDirection" value="down"/>
-    <property name="querySpawnX" value="452"/>
-    <property name="querySpawnY" value="300"/>
     <property name="queryTeleport" value="maps/firstFloorHall/map.lua"/>
    </properties>
   </object>

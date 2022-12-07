@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="8" height="8" tilewidth="52" tileheight="52" infinite="0" nextlayerid="12" nextobjectid="12">
+ <editorsettings>
+  <export target="map.lua" format="lua"/>
+ </editorsettings>
+ <properties>
+  <property name="spawnX" type="int" value="660"/>
+  <property name="spawnY" type="int" value="300"/>
+ </properties>
  <tileset firstgid="1" name="firstFloorHallTileset" tilewidth="52" tileheight="52" tilecount="20" columns="4">
   <image source="map-tileset/firstFloorHallTileset.png" width="208" height="260"/>
  </tileset>
@@ -122,6 +129,8 @@
   <object id="7" name="bedroomdoor" class="teleport" x="331.813" y="207.938" width="12.125" height="4.3125">
    <properties>
     <property name="queryDirection" value="up"/>
+    <property name="querySpawnX" value="450"/>
+    <property name="querySpawnY" value="530"/>
     <property name="queryTeleport" value="maps/bedroom/map.lua"/>
    </properties>
   </object>
@@ -134,6 +143,8 @@
   <object id="9" name="bathdoor" class="teleport" x="228.563" y="207.938" width="10.8125" height="3.6875">
    <properties>
     <property name="queryDirection" value="up"/>
+    <property name="querySpawnX" value="270"/>
+    <property name="querySpawnY" value="530"/>
     <property name="queryTeleport" value="maps/bathroom/map.lua"/>
    </properties>
   </object>

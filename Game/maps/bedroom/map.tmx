@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="8" height="8" tilewidth="52" tileheight="52" infinite="0" nextlayerid="19" nextobjectid="38">
+ <editorsettings>
+  <export target="map.lua" format="lua"/>
+ </editorsettings>
+ <properties>
+  <property name="spawnX" type="int" value="300"/>
+  <property name="spawnY" type="int" value="200"/>
+ </properties>
  <tileset firstgid="1" name="tileset" tilewidth="52" tileheight="52" tilecount="36" columns="9">
   <image source="map-tileset/bedroomTileset.png" width="468" height="208"/>
  </tileset>
@@ -265,6 +272,8 @@
   <object id="37" name="firstFloorHall" class="teleport" x="208" y="354.333" width="52" height="9.66667">
    <properties>
     <property name="queryDirection" value="down"/>
+    <property name="querySpawnX" value="660"/>
+    <property name="querySpawnY" value="300"/>
     <property name="queryTeleport" value="maps/firstFloorHall/map.lua"/>
    </properties>
   </object>

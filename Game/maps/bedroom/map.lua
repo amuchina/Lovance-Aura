@@ -11,7 +11,10 @@ return {
   tileheight = 52,
   nextlayerid = 19,
   nextobjectid = 38,
-  properties = {},
+  properties = {
+    ["spawnX"] = 300,
+    ["spawnY"] = 200
+  },
   tilesets = {
     {
       name = "tileset",
@@ -699,6 +702,8 @@ return {
           visible = true,
           properties = {
             ["queryDirection"] = "down",
+            ["querySpawnX"] = "660",
+            ["querySpawnY"] = "300",
             ["queryTeleport"] = "maps/firstFloorHall/map.lua"
           }
         }

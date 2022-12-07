@@ -77,6 +77,8 @@ function Controlls.new(Map,world,aura,objects,queryBoxs)
                                 aura.interact.dir = queryBox.queryDirection
                                 aura.interact.class = queryBox.class
                                 aura.teleportingTo = queryBox.teleport
+                                aura.teleportX = queryBox.teleportX
+                                aura.teleportY = queryBox.teleportY
                                 flag = true
                                 return flag
                             end

@@ -11,7 +11,10 @@ return {
   tileheight = 52,
   nextlayerid = 12,
   nextobjectid = 12,
-  properties = {},
+  properties = {
+    ["spawnX"] = 660,
+    ["spawnY"] = 300
+  },
   tilesets = {
     {
       name = "firstFloorHallTileset",
@@ -404,6 +407,8 @@ return {
           visible = true,
           properties = {
             ["queryDirection"] = "up",
+            ["querySpawnX"] = "450",
+            ["querySpawnY"] = "530",
             ["queryTeleport"] = "maps/bedroom/map.lua"
           }
         },
@@ -436,6 +441,8 @@ return {
           visible = true,
           properties = {
             ["queryDirection"] = "up",
+            ["querySpawnX"] = "270",
+            ["querySpawnY"] = "530",
             ["queryTeleport"] = "maps/bathroom/map.lua"
           }
         },

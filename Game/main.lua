@@ -24,14 +24,11 @@ function love.load()
     sti = require 'libs/sti'
     STI = require 'libs/sti'
 
-    Map = sti('maps/firstFloorHall/map.lua')
+    Map = sti('maps/bedroom/map.lua')
     MapTo = ''
-    
-    local x = 300
-    local y = 300
 
     Aura = require 'aura'
-    aura = Aura.new(x,y,world)
+    aura = Aura.new(Map.properties.spawnX,Map.properties.spawnY,world)
 
     Objects = require 'item/objects'
     objects = Objects.new(Map,world)
@@ -84,6 +81,7 @@ function love.update(dt)
         aura.y = aura.collider:getY() - 40
         
         aura.animate:update(dt)
+        aura.animateFire:update(dt)
 
         flag = controlls.doControlls(flag)
     else
@@ -99,7 +97,7 @@ function love.update(dt)
         STI:flush()
         MapTo = aura.teleportingTo
         Map = STI.__call(_,MapTo)
-        aura = Aura.new(300,300,world)
+        aura = Aura.new(aura.teleportX,aura.teleportY,world)
         objects = Objects.new(Map,world)
         queryBoxs = QueryBoxs.new(Map,world)
         controlls = Controlls.new(Map,world,aura,objects,queryBoxs)
@@ -111,6 +109,7 @@ end
 function love.draw()
     Map:draw(offsetx, offsety, scale, scale)
     aura.animate:draw(aura.spritesheet, aura.x, aura.y)
+    aura.animateFire:draw(aura.spritesheetFire, 200, 300)
     if aura.canInteract then
         love.graphics.print("can: true"..aura.interact.name, 0, 0)
         if aura.showInteractBox then   

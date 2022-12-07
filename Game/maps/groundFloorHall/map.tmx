@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="8" height="8" tilewidth="52" tileheight="52" infinite="0" nextlayerid="18" nextobjectid="36">
+ <tileset firstgid="1" name="tileset" tilewidth="52" tileheight="52" tilecount="28" columns="4">
+  <image source="map-tileset/groundFloorHallTileset.png" width="208" height="364"/>
+ </tileset>
+ <layer id="1" name="background" width="8" height="8">
+  <data encoding="csv">
+1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1
+</data>
+ </layer>
+ <layer id="2" name="ground" width="8" height="8">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,2,2,2,2,0,0,
+0,2,2,2,2,2,0,0,
+0,0,2,2,2,2,0,0,
+0,0,2,2,2,2,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="3" name="walls" width="8" height="8">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,3,3,3,3,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="4" name="walldetails" width="8" height="8">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,17,17,17,17,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="5" name="roomborder" width="8" height="8">
+  <data encoding="csv">
+0,13,24,24,24,24,14,0,
+0,23,9,0,0,10,22,20,
+20,23,0,0,0,0,0,20,
+20,20,20,0,0,0,22,20,
+20,23,0,0,0,0,22,0,
+0,23,11,0,0,12,22,0,
+0,15,21,21,21,21,16,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="9" name="roomborder2" width="8" height="8">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,24,20,
+0,24,0,0,0,0,0,20,
+0,0,0,0,0,0,21,20,
+0,21,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="7" name="door" width="8" height="8" offsetx="-11.6589" offsety="12">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,25,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="8" name="upstairs" width="8" height="8">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,26,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="10" name="cabinet" width="8" height="8" offsetx="13.6667" offsety="2.33333">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,4,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="11" name="clotheshanger" width="8" height="8" offsetx="-10.6667" offsety="-73.6667">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,5,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="12" name="sofa" width="8" height="8" offsetx="-15.6667" offsety="0.666667">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,7,8,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="13" name="tv" width="8" height="8" offsetx="12" offsety="3">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,6,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="14" name="carpet" width="8" height="8" offsetx="-2.66667" offsety="7.66667">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,27,28,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="15" name="fireplace" width="8" height="8">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,19,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,20,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="16" name="objects">
+  <object id="1" name="cabinet" x="292.696" y="173.391" width="16.9565" height="22.9565"/>
+  <object id="2" name="tv" x="220.188" y="271.125" width="50.75" height="35.875"/>
+  <object id="3" name="sofa" x="212.25" y="221.75" width="63" height="27.8125"/>
+  <object id="4" name="clotheshanger" x="108.273" y="90.0909" width="18" height="33.4545"/>
+  <object id="5" name="wall" x="98.4375" y="312" width="219.313" height="5.8125"/>
+  <object id="6" name="wall" x="311.875" y="156.25" width="5.875" height="161.625"/>
+  <object id="7" name="wall" x="312" y="156" width="57.8182" height="6.18182"/>
+  <object id="8" name="wall" x="364.364" y="98.1818" width="5.63636" height="64"/>
+  <object id="9" name="wall" x="98.1136" y="98" width="272.068" height="5.81818"/>
+  <object id="13" name="wall" x="98" y="97.75" width="5.75" height="57.6667"/>
+  <object id="14" name="wall" x="46" y="149.636" width="57.6364" height="6.36364"/>
+  <object id="15" name="wall" x="45.6364" y="149.091" width="6.18182" height="65.0909"/>
+  <object id="16" name="wall" x="45.4545" y="208.182" width="58.7273" height="5.81818"/>
+  <object id="17" name="wall" x="97.8182" y="208.182" width="6.36364" height="109.455"/>
+  <object id="18" name="fireplace" x="208.125" y="51.875" width="51.875" height="52"/>
+ </objectgroup>
+ <objectgroup id="17" name="queryBoxs">
+  <object id="20" name="clotheshanger" class="static" x="110.182" y="123.636" width="13.4545" height="2.81818"/>
+  <object id="22" name="clotheshanger" class="static" x="126.364" y="105.182" width="3.63636" height="15.5455"/>
+  <object id="23" name="kitchendoor" class="teleport" x="167.727" y="103.818" width="13" height="4.27273"/>
+  <object id="24" name="exitdoor" class="teleport" x="51.75" y="156.25" width="6.5" height="51.75"/>
+  <object id="25" name="fireplace" class="static" x="213.364" y="104" width="42.5455" height="4.81818"/>
+  <object id="26" name="sofa" class="static" x="208.545" y="233.727" width="3.81818" height="8.81818"/>
+  <object id="27" name="sofa" class="static" x="219.375" y="216.625" width="48.75" height="5.125"/>
+  <object id="28" name="sofa" class="static" x="275.25" y="233.875" width="4.125" height="9.625"/>
+  <object id="29" name="sofa" class="static" x="217" y="249.5" width="53.625" height="4.75"/>
+  <object id="30" name="tv" class="static" x="223.875" y="266.125" width="43.625" height="5.125"/>
+  <object id="31" name="tv" class="static" x="215.25" y="277.125" width="4.875" height="16.75"/>
+  <object id="32" name="tv" class="static" x="271.25" y="277.125" width="4.75" height="17.125"/>
+  <object id="33" name="cabinet" class="static" x="288.364" y="176" width="4.45455" height="17.2727"/>
+  <object id="34" name="cabinet" class="static" x="295.364" y="196.455" width="13.0909" height="3.90909"/>
+  <object id="35" name="goingupstairs" class="teleport" x="358.727" y="103.909" width="5.54545" height="52.0909"/>
+ </objectgroup>
+</map>

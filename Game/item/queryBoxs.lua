@@ -13,6 +13,8 @@ function QueryBoxs.new(Map,world)
                 queryBox:setCollisionClass('Teleport')
                 queryBox.class = obj.class
                 queryBox.teleport = obj.properties.queryTeleport
+                queryBox.teleportX = obj.properties.querySpawnX
+                queryBox.teleportY = obj.properties.querySpawnY
             else
                 queryBox:setCollisionClass('Ghost')
                 queryBox.queryString = obj.properties.queryString
