@@ -23,7 +23,7 @@ function love.load()
     anim8 = require 'libs/anim8'
     sti = require 'libs/sti'
     STI = require 'libs/sti'
-
+ 
     Map = sti('maps/bedroom/map.lua')
     MapTo = ''
 
@@ -38,6 +38,11 @@ function love.load()
 
     Controlls = require 'item/controlls'
     controlls = Controlls.new(Map,world,aura,objects,queryBoxs)
+    
+    Animations = require 'item/animations'
+    animations = Animations.new(Map)
+
+
 end
 
 function love.update(dt)
@@ -81,7 +86,9 @@ function love.update(dt)
         aura.y = aura.collider:getY() - 40
         
         aura.animate:update(dt)
-        aura.animateFire:update(dt)
+        if animations ~= nil then
+            animations.animate:update(dt)
+        end
 
         flag = controlls.doControlls(flag)
     else
@@ -101,6 +108,7 @@ function love.update(dt)
         objects = Objects.new(Map,world)
         queryBoxs = QueryBoxs.new(Map,world)
         controlls = Controlls.new(Map,world,aura,objects,queryBoxs)
+        animations = Animations.new(Map,MapTo)
     end
     
 
@@ -108,8 +116,11 @@ end
 
 function love.draw()
     Map:draw(offsetx, offsety, scale, scale)
+    if animations ~= nil then
+        animations.animate:draw(animations.spritesheet, animations.x, animations.y, 0, scale)
+    end
     aura.animate:draw(aura.spritesheet, aura.x, aura.y)
-    aura.animateFire:draw(aura.spritesheetFire, 200, 300)
+    
     if aura.canInteract then
         love.graphics.print("can: true"..aura.interact.name, 0, 0)
         if aura.showInteractBox then   

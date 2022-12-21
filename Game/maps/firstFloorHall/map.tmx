@@ -157,7 +157,9 @@
   <object id="11" name="goingdownstairs" class="teleport" x="51.8182" y="208" width="5.45455" height="52.0909">
    <properties>
     <property name="queryDirection" value="left"/>
-    <property name="queryTeleport" value=""/>
+    <property name="querySpawnX" value="650"/>
+    <property name="querySpawnY" value="220"/>
+    <property name="queryTeleport" value="maps/groundFloorHall/map.lua"/>
    </properties>
   </object>
  </objectgroup>

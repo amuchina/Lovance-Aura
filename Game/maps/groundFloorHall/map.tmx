@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="8" height="8" tilewidth="52" tileheight="52" infinite="0" nextlayerid="18" nextobjectid="36">
- <tileset firstgid="1" name="tileset" tilewidth="52" tileheight="52" tilecount="28" columns="4">
-  <image source="map-tileset/groundFloorHallTileset.png" width="208" height="364"/>
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="8" height="8" tilewidth="52" tileheight="52" infinite="0" nextlayerid="18" nextobjectid="43">
+ <editorsettings>
+  <export target="map.lua" format="lua"/>
+ </editorsettings>
+ <properties>
+  <property name="animX" type="int" value="415"/>
+  <property name="animY" type="int" value="68"/>
+  <property name="dirPNG" value="assets/homeAura/fireplace-stilesheet.png"/>
+  <property name="frameNumber" type="int" value="4"/>
+  <property name="hasAnimations" type="bool" value="true"/>
+  <property name="spawnX" type="int" value="300"/>
+  <property name="spawnY" type="int" value="300"/>
+ </properties>
+ <tileset firstgid="1" name="tileset" tilewidth="52" tileheight="52" tilecount="32" columns="4">
+  <image source="map-tileset/groundFloorHallTileset.png" width="208" height="416"/>
  </tileset>
  <layer id="1" name="background" width="8" height="8">
   <data encoding="csv">
@@ -19,19 +31,19 @@
   <data encoding="csv">
 0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
 0,0,2,2,2,2,0,0,
 0,2,2,2,2,2,0,0,
 0,0,2,2,2,2,0,0,
 0,0,2,2,2,2,0,0,
-0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0
 </data>
  </layer>
  <layer id="3" name="walls" width="8" height="8">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,
-0,0,3,3,3,3,0,0,
 0,0,0,0,0,0,0,0,
+0,0,3,3,3,3,0,0,
 0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,
@@ -42,76 +54,76 @@
  <layer id="4" name="walldetails" width="8" height="8">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
 0,0,17,17,17,17,0,0,
 0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer id="5" name="roomborder" width="8" height="8">
-  <data encoding="csv">
-0,13,24,24,24,24,14,0,
-0,23,9,0,0,10,22,20,
-20,23,0,0,0,0,0,20,
-20,20,20,0,0,0,22,20,
-20,23,0,0,0,0,22,0,
-0,23,11,0,0,12,22,0,
-0,15,21,21,21,21,16,0,
-0,0,0,0,0,0,0,0
-</data>
- </layer>
- <layer id="9" name="roomborder2" width="8" height="8">
+ <layer id="5" name="upstairs" width="8" height="8">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,24,20,
-0,24,0,0,0,0,0,20,
-0,0,0,0,0,0,21,20,
-0,21,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0
-</data>
- </layer>
- <layer id="7" name="door" width="8" height="8" offsetx="-11.6589" offsety="12">
-  <data encoding="csv">
-0,0,0,0,0,0,0,0,
-0,0,0,25,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0
-</data>
- </layer>
- <layer id="8" name="upstairs" width="8" height="8">
-  <data encoding="csv">
 0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,26,0,
 0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="8" name="door" width="8" height="8" offsetx="-21.0763" offsety="11.9737">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,25,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer id="10" name="cabinet" width="8" height="8" offsetx="13.6667" offsety="2.33333">
+ <layer id="6" name="roomborder" width="8" height="8">
   <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,13,24,24,24,24,14,0,
+0,23,9,0,0,10,22,14,
+13,23,0,0,0,0,0,22,
+23,0,0,0,0,0,22,16,
+15,21,0,0,0,0,22,0,
+0,23,11,0,0,12,22,0,
+0,15,21,21,21,21,16,0
+</data>
+ </layer>
+ <layer id="7" name="roomborder" width="8" height="8">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,24,0,
+0,24,0,0,0,0,0,0,
+0,0,0,0,0,0,21,0,
+0,23,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="9" name="cabinet" width="8" height="8" offsetx="13" offsety="6.75">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,
 0,0,0,0,0,4,0,0,
 0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer id="11" name="clotheshanger" width="8" height="8" offsetx="-10.6667" offsety="-73.6667">
+ <layer id="10" name="clotheshanger" width="8" height="8" offsetx="-7.5" offsety="-19">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,
@@ -123,86 +135,176 @@
 0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer id="12" name="sofa" width="8" height="8" offsetx="-15.6667" offsety="0.666667">
+ <layer id="11" name="tv" width="8" height="8" offsetx="10" offsety="1">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,7,8,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0
-</data>
- </layer>
- <layer id="13" name="tv" width="8" height="8" offsetx="12" offsety="3">
-  <data encoding="csv">
 0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,
 0,0,0,0,6,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="12" name="sofa" width="8" height="8" offsetx="35.5" offsety="-1.5">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,7,8,0,0,0,
 0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer id="14" name="carpet" width="8" height="8" offsetx="-2.66667" offsety="7.66667">
+ <layer id="13" name="fireplace" width="8" height="8">
   <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,19,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="14" name="carpet" width="8" height="8">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,
 0,0,0,27,28,0,0,0,
 0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer id="15" name="fireplace" width="8" height="8">
+ <layer id="16" name="plant" width="8" height="8" offsetx="-5.5" offsety="-1">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,
-0,0,0,0,19,0,0,0,
 0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,
-0,0,0,0,20,0,0,0,
 0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,29,0,0,0,0,0,
 0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup id="16" name="objects">
-  <object id="1" name="cabinet" x="292.696" y="173.391" width="16.9565" height="22.9565"/>
-  <object id="2" name="tv" x="220.188" y="271.125" width="50.75" height="35.875"/>
-  <object id="3" name="sofa" x="212.25" y="221.75" width="63" height="27.8125"/>
-  <object id="4" name="clotheshanger" x="108.273" y="90.0909" width="18" height="33.4545"/>
-  <object id="5" name="wall" x="98.4375" y="312" width="219.313" height="5.8125"/>
-  <object id="6" name="wall" x="311.875" y="156.25" width="5.875" height="161.625"/>
-  <object id="7" name="wall" x="312" y="156" width="57.8182" height="6.18182"/>
-  <object id="8" name="wall" x="364.364" y="98.1818" width="5.63636" height="64"/>
-  <object id="9" name="wall" x="98.1136" y="98" width="272.068" height="5.81818"/>
-  <object id="13" name="wall" x="98" y="97.75" width="5.75" height="57.6667"/>
-  <object id="14" name="wall" x="46" y="149.636" width="57.6364" height="6.36364"/>
-  <object id="15" name="wall" x="45.6364" y="149.091" width="6.18182" height="65.0909"/>
-  <object id="16" name="wall" x="45.4545" y="208.182" width="58.7273" height="5.81818"/>
-  <object id="17" name="wall" x="97.8182" y="208.182" width="6.36364" height="109.455"/>
-  <object id="18" name="fireplace" x="208.125" y="51.875" width="51.875" height="52"/>
+ <objectgroup id="15" name="objects" visible="0">
+  <object id="1" name="wall" x="46.1818" y="201.909" width="57.7273" height="5.81818"/>
+  <object id="2" name="wall" x="46.0909" y="202" width="5.81818" height="63.7273"/>
+  <object id="3" name="wall" x="46.0909" y="260.091" width="57.8182" height="5.72727"/>
+  <object id="4" name="wall" x="97.7273" y="260.091" width="6.27273" height="109.636"/>
+  <object id="5" name="wall" x="97.7273" y="364" width="220.273" height="5.72727"/>
+  <object id="6" name="wall" x="311.909" y="208.091" width="6.09091" height="161.545"/>
+  <object id="7" name="wall" x="312.091" y="208.273" width="58" height="5.72727"/>
+  <object id="8" name="wall" x="364.182" y="150.364" width="5.81818" height="63.8182"/>
+  <object id="9" name="wall" x="312" y="150.455" width="58.1818" height="5.54545"/>
+  <object id="10" name="wall" x="311.909" y="98.2727" width="6.18182" height="52.0966"/>
+  <object id="11" name="wall" x="98.0909" y="98.4545" width="220.091" height="5.45455"/>
+  <object id="12" name="wall" x="97.9091" y="98.4545" width="6.18182" height="109.455"/>
+  <object id="15" name="wall" x="104.13" y="152.043" width="207.783" height="4"/>
+  <object id="17" name="clotheshanger" x="107.625" y="144.813" width="21.875" height="33.3125"/>
+  <object id="18" name="cabinet" x="292" y="229.875" width="17" height="22.875"/>
+  <object id="19" name="sofa" x="211.438" y="271.375" width="63.125" height="28.125"/>
+  <object id="20" name="tv" x="218" y="321.063" width="51" height="35.9375"/>
+  <object id="21" name="plant" x="108.5" y="316.188" width="26.0625" height="45.3125"/>
  </objectgroup>
- <objectgroup id="17" name="queryBoxs">
-  <object id="20" name="clotheshanger" class="static" x="110.182" y="123.636" width="13.4545" height="2.81818"/>
-  <object id="22" name="clotheshanger" class="static" x="126.364" y="105.182" width="3.63636" height="15.5455"/>
-  <object id="23" name="kitchendoor" class="teleport" x="167.727" y="103.818" width="13" height="4.27273"/>
-  <object id="24" name="exitdoor" class="teleport" x="51.75" y="156.25" width="6.5" height="51.75"/>
-  <object id="25" name="fireplace" class="static" x="213.364" y="104" width="42.5455" height="4.81818"/>
-  <object id="26" name="sofa" class="static" x="208.545" y="233.727" width="3.81818" height="8.81818"/>
-  <object id="27" name="sofa" class="static" x="219.375" y="216.625" width="48.75" height="5.125"/>
-  <object id="28" name="sofa" class="static" x="275.25" y="233.875" width="4.125" height="9.625"/>
-  <object id="29" name="sofa" class="static" x="217" y="249.5" width="53.625" height="4.75"/>
-  <object id="30" name="tv" class="static" x="223.875" y="266.125" width="43.625" height="5.125"/>
-  <object id="31" name="tv" class="static" x="215.25" y="277.125" width="4.875" height="16.75"/>
-  <object id="32" name="tv" class="static" x="271.25" y="277.125" width="4.75" height="17.125"/>
-  <object id="33" name="cabinet" class="static" x="288.364" y="176" width="4.45455" height="17.2727"/>
-  <object id="34" name="cabinet" class="static" x="295.364" y="196.455" width="13.0909" height="3.90909"/>
-  <object id="35" name="goingupstairs" class="teleport" x="358.727" y="103.909" width="5.54545" height="52.0909"/>
+ <objectgroup id="17" name="queryBoxs" visible="0">
+  <object id="22" name="cabinet" class="static" x="288.174" y="231.957" width="3.86957" height="18.5652">
+   <properties>
+    <property name="queryDirection" value="right"/>
+    <property name="queryString" value="There is something similar to peanuts. You can pick it up"/>
+   </properties>
+  </object>
+  <object id="23" name="cabinet" class="static" x="294.727" y="253" width="12.3636" height="2.90909">
+   <properties>
+    <property name="queryDirection" value="up"/>
+    <property name="queryString" value="There is something similar to peanuts. You can pick it up"/>
+   </properties>
+  </object>
+  <object id="24" name="sofa" class="static" x="220.727" y="299.818" width="44.2727" height="5">
+   <properties>
+    <property name="queryDirection" value="up"/>
+    <property name="queryString" value="A cozy sofa. It seems all the pillows disappeared"/>
+   </properties>
+  </object>
+  <object id="25" name="sofa" class="static" x="274.636" y="276.273" width="4.81818" height="20.0909">
+   <properties>
+    <property name="queryDirection" value="left"/>
+    <property name="queryString" value="A cozy sofa. It seems all the pillows disappeared"/>
+   </properties>
+  </object>
+  <object id="26" name="sofa" class="static" x="206" y="276.545" width="5.45455" height="19.7273">
+   <properties>
+    <property name="queryDirection" value="right"/>
+    <property name="queryString" value="A cozy sofa. It seems all the pillows disappeared"/>
+   </properties>
+  </object>
+  <object id="30" name="clotheshanger" class="static" x="114.063" y="178.25" width="12.625" height="3.375">
+   <properties>
+    <property name="queryDirection" value="up"/>
+    <property name="queryString" value="A clothes hanger. There is a hat on"/>
+   </properties>
+  </object>
+  <object id="32" name="clotheshanger" class="static" x="129.625" y="157.188" width="3.75" height="17.3125">
+   <properties>
+    <property name="queryDirection" value="left"/>
+    <property name="queryString" value="A clothes hanger. There is a hat on"/>
+   </properties>
+  </object>
+  <object id="34" name="kitchendoor" class="teleport" x="157.688" y="156.125" width="13.1875" height="4.1875">
+   <properties>
+    <property name="queryDirection" value="up"/>
+    <property name="querySpawnX" value="450"/>
+    <property name="querySpawnY" value="200"/>
+    <property name="queryTeleport" value="maps/mappadafare/mappadafare.lua"/>
+   </properties>
+  </object>
+  <object id="35" name="fireplace" class="static" x="213.938" y="156" width="40.625" height="4.5625">
+   <properties>
+    <property name="queryDirection" value="up"/>
+    <property name="queryString" value="A comfortable fireplace. You could stare at it for the rest of your life"/>
+   </properties>
+  </object>
+  <object id="36" name="goingupstairs" class="teleport" x="358" y="156.091" width="6.09091" height="52.0909">
+   <properties>
+    <property name="queryDirection" value="right"/>
+    <property name="querySpawnX" value="130"/>
+    <property name="querySpawnY" value="330"/>
+    <property name="queryTeleport" value="maps/firstFloorHall/map.lua"/>
+   </properties>
+  </object>
+  <object id="38" name="goingworld" class="teleport" x="51.9091" y="207.909" width="6.45455" height="52.0909">
+   <properties>
+    <property name="queryDirection" value="left"/>
+    <property name="querySpawnX" value="450"/>
+    <property name="querySpawnY" value="200"/>
+    <property name="queryTeleport" value="maps/mappadafare/mappadafare.lua"/>
+   </properties>
+  </object>
+  <object id="40" name="tv" class="static" x="224.545" y="316.545" width="37.5455" height="4.54545">
+   <properties>
+    <property name="queryDirection" value="down"/>
+    <property name="queryString" value="The tv doesn't turn on. It seems to be broken"/>
+   </properties>
+  </object>
+  <object id="41" name="tv" class="static" x="212.909" y="325.727" width="5.18182" height="17.9091">
+   <properties>
+    <property name="queryDirection" value="right"/>
+    <property name="queryString" value="The tv doesn't turn on. It seems to be broken"/>
+   </properties>
+  </object>
+  <object id="42" name="tv" class="static" x="268.909" y="325.545" width="5.63636" height="17.9091">
+   <properties>
+    <property name="queryDirection" value="left"/>
+    <property name="queryString" value="The tv doesn't turn on. It seems to be broken"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

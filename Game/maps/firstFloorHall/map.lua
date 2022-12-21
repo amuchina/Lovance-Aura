@@ -475,7 +475,9 @@ return {
           visible = true,
           properties = {
             ["queryDirection"] = "left",
-            ["queryTeleport"] = ""
+            ["querySpawnX"] = "650",
+            ["querySpawnY"] = "220",
+            ["queryTeleport"] = "maps/groundFloorHall/map.lua"
           }
         }
       }

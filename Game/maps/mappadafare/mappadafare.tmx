@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="8" height="8" tilewidth="52" tileheight="52" infinite="0" nextlayerid="5" nextobjectid="6">
+ <editorsettings>
+  <export target="mappadafare.lua" format="lua"/>
+ </editorsettings>
+ <tileset firstgid="1" name="groundFloorHallTileset" tilewidth="52" tileheight="52" tilecount="32" columns="4">
+  <image source="map-tileset/groundFloorHallTileset.png" width="208" height="416"/>
+ </tileset>
+ <layer id="1" name="background" width="8" height="8">
+  <data encoding="csv">
+1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1
+</data>
+ </layer>
+ <layer id="2" name="ground" width="8" height="8">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,2,2,0,0,2,0,0,
+0,2,0,2,0,0,0,0,
+0,2,2,3,3,0,2,0,
+0,0,0,0,0,0,0,0,
+2,2,0,2,0,2,0,2,
+2,0,2,0,2,2,2,2,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="4" name="objects" visible="0">
+  <object id="1" name="wall" x="259.75" y="156.125" width="12" height="51.875"/>
+  <object id="2" name="wall" x="156" y="208" width="103.5" height="11.25"/>
+  <object id="3" name="wall" x="144" y="155.875" width="11.625" height="52.125"/>
+  <object id="4" name="wall" x="155.75" y="145.75" width="103.875" height="10.375"/>
+ </objectgroup>
+ <objectgroup id="3" name="queryBoxs" visible="0">
+  <object id="5" name="wall" class="teleport" x="155.75" y="156" width="6.875" height="51.875">
+   <properties>
+    <property name="queryDirection" value="left"/>
+    <property name="querySpawnX" value="300"/>
+    <property name="querySpawnY" value="300"/>
+    <property name="queryTeleport" value="maps/groundFloorHall/map.lua"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
