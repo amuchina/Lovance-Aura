@@ -4,6 +4,7 @@ _G.offsetx = 0
 _G.offsety = -70
 _G.flag = false
 _G.string = ''
+_G.contChar = 1
 
 function love.load()
     love.graphics.setDefaultFilter('nearest', 'nearest')
@@ -126,7 +127,7 @@ function love.draw()
         if aura.showInteractBox then   
             love.graphics.draw(interactBox, 160, 460, nil, 5, 4.6)
             love.graphics.setColor(0, 0, 0)
-            for i = 1, #aura.interactTextTable do
+            for i = 1, contChar do
                 local j = i - 39
                 if i < 40 then
                     if aura.interactTextTable[i] == 'i' then 
@@ -136,12 +137,18 @@ function love.draw()
                     end 
                 else
                     if aura.interactTextTable[i] == 'i' then 
-                        love.graphics.print(aura.interactTextTable[i], 180 + (j * 10.7), 510) 
+                        love.graphics.print(aura.interactTextTable[i], 180 + (j * 10.7), 510)
                     else
                         love.graphics.print(aura.interactTextTable[i], 180 + (j * 10.5), 510)
                     end 
-                end   
+                end 
+                if contChar < #aura.interactTextTable then
+                    contChar = contChar + 1
+                    
+                end
             end
+        else
+            contChar = 1
         end
         love.graphics.setColor(255, 255, 255)
     else

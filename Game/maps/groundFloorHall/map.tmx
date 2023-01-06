@@ -261,9 +261,9 @@
   <object id="34" name="kitchendoor" class="teleport" x="157.688" y="156.125" width="13.1875" height="4.1875">
    <properties>
     <property name="queryDirection" value="up"/>
-    <property name="querySpawnX" value="450"/>
-    <property name="querySpawnY" value="200"/>
-    <property name="queryTeleport" value="maps/mappadafare/mappadafare.lua"/>
+    <property name="querySpawnX" value="250"/>
+    <property name="querySpawnY" value="510"/>
+    <property name="queryTeleport" value="maps/kitchen/map.lua"/>
    </properties>
   </object>
   <object id="35" name="fireplace" class="static" x="213.938" y="156" width="40.625" height="4.5625">

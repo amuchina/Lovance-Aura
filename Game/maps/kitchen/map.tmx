@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="8" height="8" tilewidth="52" tileheight="52" infinite="0" nextlayerid="36" nextobjectid="35">
+ <editorsettings>
+  <export target="map.lua" format="lua"/>
+ </editorsettings>
+ <properties>
+  <property name="spawnX" type="int" value="300"/>
+  <property name="spawnY" type="int" value="300"/>
+ </properties>
+ <tileset firstgid="1" name="tileset" tilewidth="52" tileheight="52" tilecount="30" columns="5">
+  <image source="map-tileset/kitchenTileset.png" width="260" height="312"/>
+ </tileset>
+ <layer id="20" name="background" width="8" height="8">
+  <data encoding="csv">
+1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1,
+1,1,1,1,1,1,1,1
+</data>
+ </layer>
+ <layer id="21" name="ground" width="8" height="8">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,2,2,2,2,0,0,
+0,0,2,2,2,2,0,0,
+0,0,2,2,2,2,0,0,
+0,0,2,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="22" name="walls" width="8" height="8">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,3,3,3,3,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="23" name="walldetails" width="8" height="8">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,17,17,17,17,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="24" name="roomborder" width="8" height="8">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,18,14,14,14,14,19,0,
+0,12,21,0,0,22,11,0,
+0,12,0,0,0,0,11,0,
+0,12,0,0,0,0,11,0,
+0,12,0,0,0,0,11,0,
+0,12,0,11,10,10,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="25" name="roomborder" width="8" height="8">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,27,0,0,
+0,0,0,10,0,0,24,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="26" name="table" width="8" height="8" offsetx="7.08333" offsety="9.33333">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,4,5,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="27" name="oven" width="8" height="8" offsetx="7.90625" offsety="25">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,7,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="28" name="oven" width="8" height="8" offsetx="-10.25" offsety="25">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,6,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="29" name="stove" width="8" height="8" offsetx="6.25" offsety="-27">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,8,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="30" name="stove" width="8" height="8" offsetx="-9.74964" offsety="25.0011">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,7,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="31" name="stove" width="8" height="8" offsetx="6" offsety="-7.75">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,9,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="32" name="knife" width="8" height="8" offsetx="-11.25" offsety="12.5">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,16,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="33" name="pan" width="8" height="8" offsetx="-1.87778" offsety="13.9611">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,15,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="34" name="objects" visible="0">
+  <object id="21" name="wall" x="98" y="98.0155" width="6.04348" height="265.985"/>
+  <object id="22" name="wall" x="97.9778" y="97.9556" width="220.007" height="6"/>
+  <object id="23" name="wall" x="312" y="97.9531" width="6" height="220.009"/>
+  <object id="24" name="wall" x="156.037" y="312.016" width="161.931" height="5.92188"/>
+  <object id="25" name="wall" x="156.022" y="312.044" width="5.97778" height="51.6121"/>
+  <object id="26" name="walldetails" x="104.125" y="152" width="207.58" height="3.9375"/>
+  <object id="27" name="table" x="176.091" y="220.364" width="78" height="39.9091"/>
+  <object id="28" name="oven" x="119.813" y="139" width="68" height="28.875"/>
+  <object id="29" name="stove" x="224.091" y="138.818" width="68.0909" height="29.0909"/>
+  <object id="30" name="pan" class="Pickable" x="226.909" y="142" width="12.1818" height="9.81818"/>
+  <object id="31" name="knife" class="Pickable" x="165.545" y="143.455" width="10.2727" height="2.90909"/>
+ </objectgroup>
+ <objectgroup id="35" name="queryBoxs" visible="0">
+  <object id="32" name="groundFloorHall" class="teleport" x="104.125" y="354.375" width="51.9375" height="9.625">
+   <properties>
+    <property name="queryDirection" value="down"/>
+    <property name="querySpawnX" value="310"/>
+    <property name="querySpawnY" value="200"/>
+    <property name="queryTeleport" value="maps/groundFloorHall/map.lua"/>
+   </properties>
+  </object>
+  <object id="33" name="knife" x="159.813" y="167.938" width="22.75" height="4.0625">
+   <properties>
+    <property name="queryDirection" value="up"/>
+    <property name="queryString" value="A sharpen knife. Even if it's dangerous, you can pick it up"/>
+   </properties>
+  </object>
+  <object id="34" name="pan" x="227.563" y="167.938" width="27.5" height="4.25">
+   <properties>
+    <property name="queryDirection" value="up"/>
+    <property name="queryString" value="A good-looking pan. You can pick it up"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

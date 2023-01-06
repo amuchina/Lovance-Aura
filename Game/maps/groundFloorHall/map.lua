@@ -861,9 +861,9 @@ return {
           visible = true,
           properties = {
             ["queryDirection"] = "up",
-            ["querySpawnX"] = "450",
-            ["querySpawnY"] = "200",
-            ["queryTeleport"] = "maps/mappadafare/mappadafare.lua"
+            ["querySpawnX"] = "250",
+            ["querySpawnY"] = "510",
+            ["queryTeleport"] = "maps/kitchen/map.lua"
           }
         },
         {
