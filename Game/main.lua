@@ -9,6 +9,13 @@ _G.contChar = 1
 function love.load()
     love.graphics.setDefaultFilter('nearest', 'nearest')
 
+    st = {}
+    st.blip = love.audio.newSource("st/dooropen.wav", "static")
+    st.music = love.audio.newSource("st/main_ost_aura_home.wav", "stream")
+    st.music:setLooping(true)
+
+    st.music:play()
+
     wf = require 'libs/windfield'
     world = wf.newWorld(0, 0)
     world:addCollisionClass('Solid')
@@ -25,7 +32,7 @@ function love.load()
     sti = require 'libs/sti'
     STI = require 'libs/sti'
  
-    Map = sti('maps/kitchen/map.lua')
+    Map = sti('maps/bedroom/map.lua')
     MapTo = ''
 
     Aura = require 'aura'
@@ -110,6 +117,7 @@ function love.update(dt)
         queryBoxs = QueryBoxs.new(Map,world)
         controlls = Controlls.new(Map,world,aura,objects,queryBoxs)
         animations = Animations.new(Map,MapTo)
+        st.blip:play()
     end
     
 
