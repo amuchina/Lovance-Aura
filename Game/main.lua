@@ -25,11 +25,11 @@ function love.load()
     sti = require 'libs/sti'
     STI = require 'libs/sti'
  
-    Map = sti('maps/bedroom/map.lua')
+    Map = sti('maps/kitchen/map.lua')
     MapTo = ''
 
     Aura = require 'aura'
-    aura = Aura.new(Map.properties.spawnX,Map.properties.spawnY,world)
+    aura = Aura.new(Map.properties.spawnX,Map.properties.spawnY,world,"down")
 
     Objects = require 'item/objects'
     objects = Objects.new(Map,world)
@@ -105,7 +105,7 @@ function love.update(dt)
         STI:flush()
         MapTo = aura.teleportingTo
         Map = STI.__call(_,MapTo)
-        aura = Aura.new(aura.teleportX,aura.teleportY,world)
+        aura = Aura.new(aura.teleportX,aura.teleportY,world,aura.dir)
         objects = Objects.new(Map,world)
         queryBoxs = QueryBoxs.new(Map,world)
         controlls = Controlls.new(Map,world,aura,objects,queryBoxs)

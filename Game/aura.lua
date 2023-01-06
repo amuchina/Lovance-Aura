@@ -3,7 +3,7 @@ _G.anim8 = require 'libs/anim8'
 _G.sti = require 'libs/sti'
 local Aura = {}
 
-function Aura.new(x, y, world)
+function Aura.new(x, y, world, dir)
     local aura = {
         x = x,
         y = y,
@@ -11,18 +11,13 @@ function Aura.new(x, y, world)
         interact = { name = '', dir = '', class = ''},
         interactTextTable = {},
         showInteractBox = false,
-        dir = "down",
+        dir = dir,
         speed = 150,
         teleportingTo = '',
         isTeleporting = false,
         teleportX = null,
         teleportY = null
     }
-    aura.fireX = 200
-    aura.fireY = 200
-    aura.spritesheetFire = love.graphics.newImage('assets/homeAura/fireplace-stilesheet.png')
-    aura.gridFire = anim8.newGrid(52, 52, aura.spritesheetFire:getWidth(), aura.spritesheetFire:getHeight())
-    aura.fireAnimations =  anim8.newAnimation(aura.gridFire('1-4', 1), 0.2)
 
     aura.collider = world:newBSGRectangleCollider(aura.x, aura.y, 32, 20, 0)
     aura.collider:setFixedRotation(true)
@@ -38,8 +33,16 @@ function Aura.new(x, y, world)
         up = anim8.newAnimation(aura.grid('1-4', 4), 0.2)
     }
 
-    aura.animate = aura.moveAnimations.down
-    aura.animateFire = aura.fireAnimations
+    if aura.dir == "down" then
+        aura.animate = aura.moveAnimations.down
+    elseif aura.dir == "left" then
+        aura.animate = aura.moveAnimations.left
+    elseif aura.dir == "right" then
+        aura.animate = aura.moveAnimations.right
+    elseif aura.dir == "up" then
+        aura.animate = aura.moveAnimations.up
+    end
+
     return aura
 end
 
