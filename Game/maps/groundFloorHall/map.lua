@@ -915,7 +915,7 @@ return {
             ["queryDirection"] = "left",
             ["querySpawnX"] = "450",
             ["querySpawnY"] = "200",
-            ["queryTeleport"] = "maps/mappadafare/mappadafare.lua"
+            ["queryTeleport"] = "maps/world/firstWorld/map.lua"
           }
         },
         {

@@ -10,7 +10,7 @@ function love.load()
     love.graphics.setDefaultFilter('nearest', 'nearest')
 
     st = {}
-    st.blip = love.audio.newSource("st/dooropen.wav", "static")
+    st.door = love.audio.newSource("st/dooropen.wav", "static")
     st.music = love.audio.newSource("st/main_ost_aura_home.wav", "stream")
     st.music:setLooping(true)
 
@@ -23,7 +23,6 @@ function love.load()
     world:addCollisionClass('Ghost', {ignores = {'Player'}})
     world:addCollisionClass('Teleport', {ignores = {'Player'}})
     world:addCollisionClass('Pickable')
-
     interactBox = love.graphics.newImage("assets/UI/dialogbox_default.png")
     interactTextFont = love.graphics.newFont("assets/fonts/SegaArcadeFont-Regular.ttf", 28)
     love.graphics.setFont(interactTextFont)
@@ -117,7 +116,7 @@ function love.update(dt)
         queryBoxs = QueryBoxs.new(Map,world)
         controlls = Controlls.new(Map,world,aura,objects,queryBoxs)
         animations = Animations.new(Map,MapTo)
-        st.blip:play()
+        st.door:play()
     end
     
 

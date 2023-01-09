@@ -285,7 +285,7 @@
     <property name="queryDirection" value="left"/>
     <property name="querySpawnX" value="450"/>
     <property name="querySpawnY" value="200"/>
-    <property name="queryTeleport" value="maps/mappadafare/mappadafare.lua"/>
+    <property name="queryTeleport" value="maps/world/firstWorld/map.lua"/>
    </properties>
   </object>
   <object id="40" name="tv" class="static" x="224.545" y="316.545" width="37.5455" height="4.54545">
