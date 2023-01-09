@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="80" height="60" tilewidth="52" tileheight="52" infinite="0" nextlayerid="159" nextobjectid="1">
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="80" height="60" tilewidth="52" tileheight="52" infinite="0" nextlayerid="160" nextobjectid="126">
  <editorsettings>
   <export target="map.lua" format="lua"/>
  </editorsettings>
@@ -2440,6 +2440,131 @@
 </data>
   </layer>
  </group>
+ <objectgroup id="159" name="objects" visible="0">
+  <object id="1" name="trees" x="0.666667" y="0.666667" width="4159.33" height="51.3333"/>
+  <object id="2" name="trees" x="0" y="50" width="53" height="3070"/>
+  <object id="3" name="trees" x="888" y="3068" width="3270" height="52"/>
+  <object id="4" name="trees" x="4109.33" y="53.3333" width="50.6667" height="3014.67"/>
+  <object id="5" name="trees" x="52" y="50.6667" width="1246.67" height="52"/>
+  <object id="7" name="trees" x="1298.5" y="40" width="21.5" height="33"/>
+  <object id="8" name="trees" x="1376" y="70.5" width="16.5" height="7.5"/>
+  <object id="9" name="trees" x="1391.5" y="39" width="11.5" height="30.5"/>
+  <object id="10" name="trees" x="1352" y="103.5" width="104" height="52"/>
+  <object id="11" name="trees" x="1390.5" y="71.5" width="25" height="29.5"/>
+  <object id="12" name="trees" x="1403" y="52.5" width="364.5" height="52"/>
+  <object id="13" name="trees" x="1769.5" y="53.5" width="15" height="9.5"/>
+  <object id="14" name="trees" x="1820" y="51.5" width="105" height="53"/>
+  <object id="15" name="trees" x="1872" y="104" width="52" height="52"/>
+  <object id="16" name="trees" x="1925.5" y="35.5" width="17" height="29"/>
+  <object id="17" name="trees" x="1975.5" y="52" width="675.5" height="51.5"/>
+  <object id="18" name="trees" x="2080" y="103.5" width="52" height="52.5"/>
+  <object id="19" name="trees" x="2129.5" y="90" width="22" height="34"/>
+  <object id="20" name="trees" x="2651" y="42.5" width="21" height="33"/>
+  <object id="21" name="trees" x="2704" y="52.5" width="208.5" height="52"/>
+  <object id="22" name="trees" x="2912.5" y="53" width="19" height="13"/>
+  <object id="23" name="trees" x="3004" y="36" width="13.5" height="29"/>
+  <object id="24" name="trees" x="3016.5" y="50.5" width="207.5" height="54"/>
+  <object id="25" name="trees" x="3068" y="104.5" width="104.5" height="51"/>
+  <object id="26" name="trees" x="3224.5" y="38" width="15" height="29"/>
+  <object id="28" name="trees" x="3328" y="52.5" width="52" height="50.5"/>
+  <object id="29" name="trees" x="3381" y="38.5" width="22.5" height="33"/>
+  <object id="30" name="trees" x="3432" y="51.5" width="156.5" height="52.5"/>
+  <object id="31" name="trees" x="3589" y="40" width="21.5" height="32.5"/>
+  <object id="32" name="trees" x="3640.5" y="52" width="52" height="51.5"/>
+  <object id="33" name="trees" x="3744.5" y="51.5" width="207.5" height="53"/>
+  <object id="34" name="trees" x="3744.55" y="104.5" width="103.955" height="52"/>
+  <object id="35" name="trees" x="4004" y="49.5" width="51.5" height="54.5"/>
+  <object id="36" name="trees" x="4055.5" y="39" width="22" height="31"/>
+  <object id="37" name="trees" x="4056.5" y="312.5" width="53" height="208"/>
+  <object id="38" name="trees" x="4087" y="285.5" width="14" height="28.5"/>
+  <object id="39" name="trees" x="4004" y="364" width="54.5" height="104"/>
+  <object id="40" name="trees" x="3982.5" y="394" width="22.5" height="33"/>
+  <object id="41" name="trees" x="4055.5" y="727.5" width="55.5" height="157"/>
+  <object id="42" name="trees" x="4082" y="695" width="27" height="34"/>
+  <object id="43" name="trees" x="4056" y="936" width="55.5" height="52.5"/>
+  <object id="44" name="trees" x="4056" y="1248" width="57.5" height="53"/>
+  <object id="45" name="trees" x="4085.5" y="1212.5" width="25.5" height="34.5"/>
+  <object id="46" name="trees" x="4056" y="1456" width="54" height="259.5"/>
+  <object id="47" name="trees" x="4056.5" y="1768" width="54.5" height="103"/>
+  <object id="48" name="trees" x="4056" y="2028.5" width="54" height="104"/>
+  <object id="49" name="trees" x="4056" y="2392" width="54" height="312"/>
+  <object id="50" name="trees" x="4056.5" y="2860.5" width="53" height="103.5"/>
+  <object id="51" name="trees" x="4076.5" y="2822" width="23.5" height="38.5"/>
+  <object id="52" name="trees" x="3900" y="3016" width="105" height="51.5"/>
+  <object id="53" name="trees" x="3692" y="3016" width="51.5" height="51.5"/>
+  <object id="54" name="trees" x="3588.5" y="3015.5" width="51.5" height="53"/>
+  <object id="55" name="trees" x="3380" y="3016.5" width="156.5" height="51"/>
+  <object id="56" name="trees" x="3172.5" y="3015.5" width="104" height="53"/>
+  <object id="57" name="trees" x="2808.5" y="3016" width="156" height="52"/>
+  <object id="58" name="trees" x="2600.5" y="3016" width="51.5" height="51.5"/>
+  <object id="59" name="trees" x="2392" y="3016.5" width="51.5" height="51.5"/>
+  <object id="60" name="trees" x="2236" y="3015.5" width="51.5" height="52"/>
+  <object id="61" name="trees" x="1872" y="3015.5" width="260" height="52.5"/>
+  <object id="62" name="trees" x="1664" y="3016" width="104" height="52"/>
+  <object id="63" name="trees" x="1404.5" y="3016" width="155.5" height="54"/>
+  <object id="64" name="trees" x="1248.5" y="3016" width="51.5" height="54"/>
+  <object id="65" name="trees" x="988" y="3016" width="208.5" height="52"/>
+  <object id="66" name="trees" x="53.3333" y="3068.67" width="726" height="52"/>
+  <object id="67" name="trees" x="780" y="3084.67" width="93.3333" height="34.6667"/>
+  <object id="68" name="trees" x="520.5" y="3016" width="155.5" height="52.5"/>
+  <object id="69" name="trees" x="475.5" y="3054" width="17" height="9"/>
+  <object id="70" name="trees" x="477.5" y="2988.5" width="14" height="29.5"/>
+  <object id="71" name="trees" x="419.5" y="2902" width="14" height="28"/>
+  <object id="72" name="trees" x="208" y="3016" width="260" height="52.5"/>
+  <object id="73" name="trees" x="183" y="3030.5" width="24" height="38"/>
+  <object id="74" name="trees" x="166" y="3021" width="18" height="9.5"/>
+  <object id="75" name="trees" x="155.5" y="2912" width="260.5" height="104"/>
+  <object id="76" name="trees" x="312" y="2807" width="52.5" height="106"/>
+  <object id="77" name="trees" x="364.5" y="2795" width="14.5" height="29.5"/>
+  <object id="78" name="trees" x="53" y="2756.13" width="51.5" height="311.875"/>
+  <object id="79" name="trees" x="104.25" y="2756.13" width="156.25" height="104.375"/>
+  <object id="80" name="trees" x="257.75" y="2732.88" width="13.375" height="31"/>
+  <object id="81" name="trees" x="259" y="2813.33" width="11.6667" height="30.3333"/>
+  <object id="82" name="trees" x="237" y="2838" width="10.6667" height="28.6667"/>
+  <object id="83" name="trees" x="174.667" y="2830.67" width="23.6667" height="34.3333"/>
+  <object id="84" name="trees" x="109.667" y="2867.67" width="18.6667" height="9.33333"/>
+  <object id="85" name="trees" x="53.6667" y="2724.67" width="13" height="31.6667"/>
+  <object id="86" name="trees" x="104" y="2392" width="156.333" height="260.333"/>
+  <object id="87" name="trees" x="104" y="2652.33" width="104" height="52"/>
+  <object id="88" name="trees" x="174.333" y="2679.67" width="12.6667" height="30"/>
+  <object id="89" name="trees" x="94.3333" y="2676.67" width="13.6667" height="29.3333"/>
+  <object id="90" name="trees" x="94" y="2631.33" width="13.6667" height="28.6667"/>
+  <object id="91" name="trees" x="208.333" y="2637.67" width="14.3333" height="30"/>
+  <object id="92" name="trees" x="239.667" y="2625.33" width="14.3333" height="29.6667"/>
+  <object id="93" name="trees" x="260" y="2521" width="22" height="34"/>
+  <object id="94" name="trees" x="260" y="2479" width="11" height="30.3333"/>
+  <object id="95" name="trees" x="53.3333" y="1871.67" width="155.333" height="364.667"/>
+  <object id="96" name="trees" x="52.6667" y="2228.67" width="51.3333" height="111"/>
+  <object id="97" name="trees" x="123.333" y="2241.67" width="15" height="30.6667"/>
+  <object id="98" name="trees" x="156.333" y="2236.33" width="104" height="155.667"/>
+  <object id="99" name="trees" x="260.333" y="2339.67" width="51.6667" height="156.667"/>
+  <object id="100" name="trees" x="260.333" y="2304.33" width="20.6667" height="34.6667"/>
+  <object id="101" name="trees" x="129.667" y="2359" width="26.6667" height="32.3333"/>
+  <object id="102" name="trees" x="202.333" y="2201.33" width="23.3333" height="34.6667"/>
+  <object id="103" name="trees" x="198.667" y="2102.33" width="23.3333" height="35"/>
+  <object id="104" name="trees" x="53.3333" y="1560" width="102.667" height="311"/>
+  <object id="105" name="trees" x="52.6667" y="102.667" width="51.3333" height="1457.67"/>
+  <object id="106" name="trees" x="104.333" y="1502.67" width="28" height="34.3333"/>
+  <object id="107" name="trees" x="104.333" y="1039.67" width="52" height="467.667"/>
+  <object id="108" name="trees" x="156.333" y="1144" width="51.3333" height="156.333"/>
+  <object id="109" name="trees" x="157" y="1086.67" width="26" height="33.3333"/>
+  <object id="110" name="trees" x="113.333" y="882.667" width="14.3333" height="30"/>
+  <object id="111" name="trees" x="104.333" y="831.667" width="52.3333" height="51.6667"/>
+  <object id="112" name="trees" x="104" y="780.667" width="17.6667" height="29.6667"/>
+  <object id="113" name="trees" x="103.667" y="723.333" width="27" height="33.6667"/>
+  <object id="114" name="trees" x="104" y="572.333" width="52.6667" height="155.667"/>
+  <object id="115" name="trees" x="157.667" y="676.333" width="14.6667" height="30"/>
+  <object id="116" name="trees" x="104.333" y="520.667" width="16" height="30.3333"/>
+  <object id="117" name="trees" x="104" y="260.667" width="15.6667" height="30.6667"/>
+  <object id="118" name="trees" x="104" y="151" width="28.3333" height="33.6667"/>
+  <object id="119" name="trees" x="104" y="102.333" width="52.6667" height="53.3333"/>
+  <object id="120" name="trees" x="157.333" y="102.667" width="14" height="32.3333"/>
+  <object id="121" name="trees" x="260.333" y="101" width="52.3333" height="55"/>
+  <object id="122" name="trees" x="364" y="102" width="52.6667" height="54"/>
+  <object id="123" name="trees" x="884" y="102.333" width="53" height="53.6667"/>
+  <object id="124" name="trees" x="1027.33" y="88.6667" width="12.6667" height="31.6667"/>
+  <object id="125" name="trees" x="1040" y="100.333" width="52.6667" height="55.6667"/>
+ </objectgroup>
  <group id="8" name="trees">
   <layer id="9" name="Livello tile 2" width="80" height="60">
    <data encoding="csv">

@@ -131,7 +131,7 @@
     <property name="queryDirection" value="up"/>
     <property name="querySpawnX" value="450"/>
     <property name="querySpawnY" value="530"/>
-    <property name="queryTeleport" value="maps/bedroom/map.lua"/>
+    <property name="queryTeleport" value="maps/firstWorld/Aura'sHouse/bedroom/map.lua"/>
    </properties>
   </object>
   <object id="8" name="lovely plant" class="static" x="281.313" y="207.063" width="8.125" height="6.125">
@@ -145,7 +145,7 @@
     <property name="queryDirection" value="up"/>
     <property name="querySpawnX" value="270"/>
     <property name="querySpawnY" value="530"/>
-    <property name="queryTeleport" value="maps/bathroom/map.lua"/>
+    <property name="queryTeleport" value="maps/firstWorld/Aura'sHouse/bathroom/map.lua"/>
    </properties>
   </object>
   <object id="10" name="bedroom2door" class="static" x="177.438" y="208" width="9.5625" height="3.625">
@@ -159,7 +159,7 @@
     <property name="queryDirection" value="left"/>
     <property name="querySpawnX" value="650"/>
     <property name="querySpawnY" value="220"/>
-    <property name="queryTeleport" value="maps/groundFloorHall/map.lua"/>
+    <property name="queryTeleport" value="maps/firstWorld/Aura'sHouse/groundFloorHall/map.lua"/>
    </properties>
   </object>
  </objectgroup>

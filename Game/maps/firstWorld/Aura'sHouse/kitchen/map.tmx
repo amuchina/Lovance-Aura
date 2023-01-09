@@ -197,7 +197,7 @@
     <property name="queryDirection" value="down"/>
     <property name="querySpawnX" value="310"/>
     <property name="querySpawnY" value="200"/>
-    <property name="queryTeleport" value="maps/groundFloorHall/map.lua"/>
+    <property name="queryTeleport" value="maps/firstWorld/Aura'sHouse/groundFloorHall/map.lua"/>
    </properties>
   </object>
   <object id="33" name="knife" x="159.813" y="167.938" width="22.75" height="4.0625">

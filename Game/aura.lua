@@ -3,7 +3,7 @@ _G.anim8 = require 'libs/anim8'
 _G.sti = require 'libs/sti'
 local Aura = {}
 
-function Aura.new(x, y, world, dir)
+function Aura.new(x, y, world, dir, currentMap)
     local aura = {
         x = x,
         y = y,
@@ -16,7 +16,8 @@ function Aura.new(x, y, world, dir)
         teleportingTo = '',
         isTeleporting = false,
         teleportX = null,
-        teleportY = null
+        teleportY = null,
+        currentMap = currentMap
     }
 
     aura.collider = world:newBSGRectangleCollider(aura.x, aura.y, 32, 20, 0)

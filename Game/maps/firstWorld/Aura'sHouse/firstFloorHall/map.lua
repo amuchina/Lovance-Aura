@@ -409,7 +409,7 @@ return {
             ["queryDirection"] = "up",
             ["querySpawnX"] = "450",
             ["querySpawnY"] = "530",
-            ["queryTeleport"] = "maps/bedroom/map.lua"
+            ["queryTeleport"] = "maps/firstWorld/Aura'sHouse/bedroom/map.lua"
           }
         },
         {
@@ -443,7 +443,7 @@ return {
             ["queryDirection"] = "up",
             ["querySpawnX"] = "270",
             ["querySpawnY"] = "530",
-            ["queryTeleport"] = "maps/bathroom/map.lua"
+            ["queryTeleport"] = "maps/firstWorld/Aura'sHouse/bathroom/map.lua"
           }
         },
         {
@@ -477,7 +477,7 @@ return {
             ["queryDirection"] = "left",
             ["querySpawnX"] = "650",
             ["querySpawnY"] = "220",
-            ["queryTeleport"] = "maps/groundFloorHall/map.lua"
+            ["queryTeleport"] = "maps/firstWorld/Aura'sHouse/groundFloorHall/map.lua"
           }
         }
       }

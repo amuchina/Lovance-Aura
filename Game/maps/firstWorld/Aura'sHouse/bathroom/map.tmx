@@ -165,7 +165,7 @@
     <property name="queryDirection" value="down"/>
     <property name="querySpawnX" value="452"/>
     <property name="querySpawnY" value="300"/>
-    <property name="queryTeleport" value="maps/firstFloorHall/map.lua"/>
+    <property name="queryTeleport" value="maps/firstWorld/Aura'sHouse/firstFloorHall/map.lua"/>
    </properties>
   </object>
   <object id="23" name="wc" class="static" x="247" y="293.105" width="21.625" height="4.5">

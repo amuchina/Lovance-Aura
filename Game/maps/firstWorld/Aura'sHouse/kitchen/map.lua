@@ -627,7 +627,7 @@ return {
             ["queryDirection"] = "down",
             ["querySpawnX"] = "310",
             ["querySpawnY"] = "200",
-            ["queryTeleport"] = "maps/groundFloorHall/map.lua"
+            ["queryTeleport"] = "maps/firstWorld/Aura'sHouse/groundFloorHall/map.lua"
           }
         },
         {

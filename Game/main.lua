@@ -5,6 +5,11 @@ _G.offsety = -70
 _G.flag = false
 _G.string = ''
 _G.contChar = 1
+_G.w = 0
+_G.h = 0
+_G.mapW = 0
+_G.mapH = 0
+
 
 function love.load()
     love.graphics.setDefaultFilter('nearest', 'nearest')
@@ -31,11 +36,11 @@ function love.load()
     sti = require 'libs/sti'
     STI = require 'libs/sti'
  
-    Map = sti('maps/bedroom/map.lua')
+    Map = sti("maps/firstWorld/Aura'sHouse/groundFloorHall/map.lua")
     MapTo = ''
 
     Aura = require 'aura'
-    aura = Aura.new(Map.properties.spawnX,Map.properties.spawnY,world,"down")
+    aura = Aura.new(Map.properties.spawnX,Map.properties.spawnY,world,"down","maps/firstWorld/Aura'sHouse/groundFloorHall/map.lua")
 
     Objects = require 'item/objects'
     objects = Objects.new(Map,world)
@@ -48,6 +53,9 @@ function love.load()
     
     Animations = require 'item/animations'
     animations = Animations.new(Map)
+
+    camera = require 'libs/camera'
+    cam = camera()
 
 
 end
@@ -96,6 +104,43 @@ function love.update(dt)
         if animations ~= nil then
             animations.animate:update(dt)
         end
+        
+        if aura.currentMap.match( aura.currentMap,'^(maps/%a+/map.lua)$') then
+            -- Update camera position
+            cam:lookAt(aura.x, aura.y)
+
+            -- This section prevents the camera from viewing outside the background
+            -- First, get width/height of the game window
+            w = love.graphics.getWidth()
+            h = love.graphics.getHeight()
+
+            -- Left border
+            if cam.x < w/2 then
+                cam.x = w/2
+            end
+
+            -- Top border
+            if cam.y < h/2 then
+                cam.y = h/2
+            end
+
+            -- Get width/height of background
+            mapW = Map.width * Map.tilewidth *2
+            mapH = Map.height * Map.tileheight *2
+
+            -- Right border
+            if cam.x > (mapW - w/2) then
+                cam.x = (mapW - w/2)
+            end
+            -- Bottom border
+            if cam.y > (mapH - h/2 + offsety * scale) then
+                cam.y = (mapH - h/2 + offsety * scale)
+            end
+            
+
+        else
+            --[no cam
+        end
 
         flag = controlls.doControlls(flag)
     else
@@ -109,9 +154,10 @@ function love.update(dt)
         world:addCollisionClass('Teleport', {ignores = {'Player'}})
         world:addCollisionClass('Pickable')
         STI:flush()
+        
         MapTo = aura.teleportingTo
         Map = STI.__call(_,MapTo)
-        aura = Aura.new(aura.teleportX,aura.teleportY,world,aura.dir)
+        aura = Aura.new(aura.teleportX,aura.teleportY,world,aura.dir,aura.teleportingTo)
         objects = Objects.new(Map,world)
         queryBoxs = QueryBoxs.new(Map,world)
         controlls = Controlls.new(Map,world,aura,objects,queryBoxs)
@@ -121,12 +167,39 @@ function love.update(dt)
 end
 
 function love.draw()
-    Map:draw(offsetx, offsety, scale, scale)
+    cam:attach()
+    if aura.currentMap.match( aura.currentMap,'^(maps/%a+/map.lua)$') then
+
+        if(cam.x < w/2) and (cam.y < h/2) then
+            Map:draw(offsetx, offsety, scale, scale)
+        end
+
+        if(cam.x >= w/2) and (cam.y < h/2) then
+            Map:draw(offsetx + (w/2 - cam.x) / 2, offsety, scale, scale)
+        end
+
+        if(cam.x < w/2) and (cam.y >= h/2) then
+            Map:draw(offsetx, offsety + (h/2 - cam.y) / 2, scale, scale)
+        end
+
+        if(cam.x >= w/2) and (cam.y >= h/2) then
+            Map:draw(offsetx + (w/2 - cam.x) / 2, offsety + (h/2 - cam.y) / 2, scale, scale)
+        end
+    else
+        Map:draw(offsetx, offsety, scale, scale)
+    end
     if animations ~= nil then
         animations.animate:draw(animations.spritesheet, animations.x, animations.y, 0, scale)
     end
     aura.animate:draw(aura.spritesheet, aura.x, aura.y)
-    
+    love.graphics.print(w, 0, 0)
+    love.graphics.print(h, 0, 20)
+    love.graphics.print(mapW, aura.x, aura.y + 40)
+    love.graphics.print(mapH, aura.x, aura.y + 60)
+    love.graphics.print(aura.x, aura.x, aura.y + 80)
+    love.graphics.print(aura.y, aura.x, aura.y + 100)
+    love.graphics.print(cam.x, aura.x, aura.y + 120)
+    love.graphics.print(cam.y, aura.x, aura.y + 140)
     if aura.canInteract then
         if aura.showInteractBox then   
             love.graphics.draw(interactBox, 160, 460, nil, 5, 4.6)
@@ -156,4 +229,5 @@ function love.draw()
         end
         love.graphics.setColor(255, 255, 255)
     end
+    cam:detach()
 end
