@@ -118,8 +118,6 @@ function love.update(dt)
         animations = Animations.new(Map,MapTo)
         st.door:play()
     end
-    
-
 end
 
 function love.draw()
@@ -130,7 +128,6 @@ function love.draw()
     aura.animate:draw(aura.spritesheet, aura.x, aura.y)
     
     if aura.canInteract then
-        love.graphics.print("can: true"..aura.interact.name, 0, 0)
         if aura.showInteractBox then   
             love.graphics.draw(interactBox, 160, 460, nil, 5, 4.6)
             love.graphics.setColor(0, 0, 0)
@@ -158,14 +155,5 @@ function love.draw()
             contChar = 1
         end
         love.graphics.setColor(255, 255, 255)
-    else
-        love.graphics.print("can: false"..aura.interact.name, 0, 0)
     end
-    
-    if flag then
-        love.graphics.print("flag: true "..MapTo , 0, 20)
-    else
-        love.graphics.print("flag: false", 0, 20)
-    end
-    love.graphics.print("dir: " ..aura.dir, 0, 40)
 end
