@@ -1,4 +1,4 @@
-# Lovance-Aura🍓
+# Lovance-Aura🍬
 
 EN: Official Github repository for Lovance\Aura game development team
 
